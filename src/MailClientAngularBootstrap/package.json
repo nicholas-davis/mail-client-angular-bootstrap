@@ -1,7 +1,7 @@
 {
   "name": "mail-client-angular-bootstrap",
   "version": "1.0.0",
-  "description": "Code example: Mail client app using AngularJs, Angular UI Boostrap, and Bootstrap",
+  "description": "Code example: Mail client app using AngularJs, Angular UI Boostrap, UI Router, and Bootstrap",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

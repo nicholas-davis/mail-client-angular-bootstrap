@@ -13,7 +13,7 @@
   "authors": [
     "Nick Davis <hire@nicholasdavis.co>"
   ],
-  "description": "Code example: Mail client app using AngularJs, Angular UI Boostrap, and Bootstrap",
+  "description": "Code example: Mail client app using AngularJs, Angular UI Boostrap, UI Router, and Bootstrap",
   "main": "",
   "keywords": [
     "AngularJs",
