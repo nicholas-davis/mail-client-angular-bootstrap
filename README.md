@@ -1,5 +1,5 @@
 # Mail Client
-The purpose for application is for presentation only. 
+This application is for presentation purposes only. 
 
 ##Tools
 - Angular 1.5.8
