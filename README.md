@@ -10,4 +10,4 @@ The purpose for application is for presentation only.
 - Gulp
 
 ##Design
-- Product design was created in Adobe Photoshop CC: [view psd file](design/mail_client_mockup.psd)
+- Product design was created in Adobe Photoshop CC: [view psd file](https://github.com/nicholas-davis/design/blob/master/mail_client_mockup.psd)
