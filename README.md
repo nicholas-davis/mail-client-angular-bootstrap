@@ -1,13 +1,13 @@
 # Mail Client
 This application is for presentation purposes only. 
 
-##Tools
-- Angular 1.5.8
-- Angular UI Router 0.3.1
-- Angular UI Bootstrap 1.3.3
-- Bootstrap 3.3.7
+##Frameworks/Tools
+- Angular v1.5.8
+- Angular UI Router v0.3.1
+- Angular UI Bootstrap v1.3.3
+- Bootstrap v3.3.7
 - Bower
 - Gulp
 
 ##Design
-- Product design was created in Adobe Photoshop CC: [view psd file](https://github.com/nicholas-davis/design/blob/master/mail_client_mockup.psd)
+- Product design was created in Adobe Photoshop CC: [raw psd](https://github.com/nicholas-davis/design/blob/master/mail_client_mockup.psd)

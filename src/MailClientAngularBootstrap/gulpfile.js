@@ -41,5 +41,5 @@ gulp.task('scripts', ['clean-scripts'], function () {
 //watchers
 gulp.task('watch', function () {
     gulp.watch('wwwroot/assets/css/**/*.less', ['less']);
-    gulp.watch(['wwwroot/**/*.js', '!wwwroot/app/app.min.js', '!wwwroot/app/_references.js'], ['scripts']);
+    //gulp.watch(['wwwroot/**/*.js', '!wwwroot/app/app.min.js', '!wwwroot/app/_references.js'], ['scripts']);
 })

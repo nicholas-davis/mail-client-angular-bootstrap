@@ -1,6 +1,30 @@
 ﻿<!-- components/Mail -->
 <aside role="complementary">
-    add aside here
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">Project name</a>
+                        </div>
+                        <div class="navbar-search">
+                            <form class="navbar-form navbar-left">
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Search">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
 </aside>
 <!--/Side Menu-->
 <!--Main-->
@@ -8,9 +32,26 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </div>
+                </nav>
 
-                <!--Navbar-->
-                Add nav here
 
                 <section>
                     <div ui-view></div>
@@ -21,11 +62,11 @@
 </main>
 <!--/Main-->
 <!--Footer-->
-<footer class="body-footer" role="contentinfo">
+<footer class="footer" role="contentinfo">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-               footer
+                footer
             </div>
         </div>
     </div>
