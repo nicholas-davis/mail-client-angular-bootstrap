@@ -4472,8 +4472,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
+  background-color: #e6e6e6;
+  border-color: #d5d5d5;
 }
 .navbar-default .navbar-brand {
   color: #777;
@@ -4498,7 +4498,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #555;
-  background-color: #e7e7e7;
+  background-color: #d5d5d5;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
@@ -4518,12 +4518,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #e7e7e7;
+  border-color: #d5d5d5;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #e7e7e7;
+  background-color: #d5d5d5;
   color: #555;
 }
 @media (max-width: 767px) {
@@ -4539,7 +4539,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #555;
-    background-color: #e7e7e7;
+    background-color: #d5d5d5;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
@@ -9681,6 +9681,9 @@ MIT License: https://github.com/driftyco/ionicons
 .ion-xbox:before {
   content: "\f30c";
 }
+/*html, body, main, aside, div[ui-view] {
+    //&:extend(.full-height);
+}*/
 /*--------------------------------------------------------------*/
 /* =Reset
 /*--------------------------------------------------------------*/
@@ -9710,6 +9713,16 @@ MIT License: https://github.com/driftyco/ionicons
 .absolute {
   position: absolute;
 }
+.absolute.absolute-center {
+  width: 50%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 .strong {
   font-weight: 700;
 }
@@ -9738,6 +9751,9 @@ MIT License: https://github.com/driftyco/ionicons
 }
 .cursor-pointer-none {
   cursor: default;
+}
+.full-height {
+  height: 100vh;
 }
 /* mar, pad*/
 .mar-none {
@@ -10014,6 +10030,18 @@ MIT License: https://github.com/driftyco/ionicons
 /*=================================================*/
 /*=================================================*/
 /*=================================================*/
+/*search*/
+.navbar-search {
+  float: left !important;
+}
+.navbar-search .navbar-form {
+  width: 100%;
+  padding: 0 !important;
+  border: none !important;
+}
+.navbar-search .navbar-form .input-group {
+  width: 350px;
+}
 /*=================================================*/
 /*=================================================*/
 main,
@@ -10023,6 +10051,60 @@ footer {
 aside {
   width: 400px;
   float: left !important;
+}
+.list-group-mail-menu {
+  width: 50px;
+  float: left !important;
+}
+.list-group-mail-menu .list-group-item {
+  color: inherit;
+  background: none;
+  border: none !important;
+}
+.list-group-mail-menu .list-group-item.active,
+.list-group-mail-menu .list-group-item:hover,
+.list-group-mail-menu .list-group-item:focus {
+  color: inherit;
+}
+.list-group-mail-menu .list-group-item.active .list-group-item-text,
+.list-group-mail-menu .list-group-item:hover .list-group-item-text,
+.list-group-mail-menu .list-group-item:focus .list-group-item-text {
+  color: inherit;
+}
+.list-group-mail-menu .list-group-item .icon {
+  font-size: 30px;
+}
+.list-group-mail-items {
+  margin-left: 50px;
+  background: #ebebeb;
+}
+.list-group-mail-items .list-group-item {
+  color: inherit;
+  background: none;
+  border: none !important;
+}
+.list-group-mail-items .list-group-item.active,
+.list-group-mail-items .list-group-item:hover,
+.list-group-mail-items .list-group-item:focus {
+  color: inherit;
+}
+.list-group-mail-items .list-group-item.active .list-group-item-text,
+.list-group-mail-items .list-group-item:hover .list-group-item-text,
+.list-group-mail-items .list-group-item:focus .list-group-item-text {
+  color: inherit;
+}
+.list-group-mail-items .list-group-item .icon {
+  font-size: 30px;
+}
+.list-group-mail-items .list-group-item.active,
+.list-group-mail-items .list-group-item:hover,
+.list-group-mail-items .list-group-item:focus {
+  background: #e3ecf2;
+}
+.list-group-mail-items .list-group-item.active .list-group-item-text,
+.list-group-mail-items .list-group-item:hover .list-group-item-text,
+.list-group-mail-items .list-group-item:focus .list-group-item-text {
+  color: inherit;
 }
 /*=================================================*/
 /*=================================================*/

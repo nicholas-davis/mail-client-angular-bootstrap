@@ -429,7 +429,7 @@
 @navbar-collapse-max-height: 340px;
 
 @navbar-default-color: #777;
-@navbar-default-bg: #f8f8f8;
+@navbar-default-bg: #e6e6e6;
 @navbar-default-border: darken(@navbar-default-bg, 6.5%);
 
 // Navbar links
@@ -937,6 +937,10 @@
 // --------------------------------------------------
 @import "../lib/ionicons/less/ionicons";
 
+/*html, body, main, aside, div[ui-view] {
+    //&:extend(.full-height);
+}*/
+
 /*--------------------------------------------------------------*/
 /* =Reset
 /*--------------------------------------------------------------*/
@@ -961,7 +965,6 @@
     border-radius: 0 !important;
 }
 
-
 /*--------------------------------------------------------------*/
 /* =Common
 /*--------------------------------------------------------------*/
@@ -971,6 +974,17 @@
 
 .absolute {
     position: absolute;
+
+    &.absolute-center {
+        width: 50%;
+        height: 50%;
+        overflow: auto;
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
 }
 
 .strong {
@@ -1010,16 +1024,33 @@
 .cursor-pointer-none {
     cursor: default;
 }
+
+.full-height {
+    height: 100vh;
+}
 /* mar, pad*/
 .makeSpacing();
 /*=================================================*/
 //= Header
 /*=================================================*/
-
 /*=================================================*/
 //= Navbar
 /*=================================================*/
 
+/*search*/
+.navbar-search {
+    .pull-left;
+
+    .navbar-form {
+        width: 100%;
+        .pad-none;
+        .border-none;
+
+        .input-group {
+            width: 350px;
+        }
+    }
+}
 /*=================================================*/
 //= Structure
 /*=================================================*/
@@ -1031,10 +1062,58 @@ aside {
     width: 400px;
     .pull-left;
 }
+
+
+.list-group-mail-menu {
+    width: 50px;
+    .pull-left;
+
+    .list-group-item {
+        color: inherit;
+        background: none;
+        .border-none;
+
+        &.active,
+        &:hover,
+        &:focus {
+            color: inherit;
+
+            .list-group-item-text {
+                color: inherit;
+            }
+        }
+
+
+        .icon {
+            font-size: @font-size-h2;
+        }
+    }
+}
+
+.list-group-mail-items {
+    margin-left: 50px;
+    background: #ebebeb;
+
+    .list-group-item {
+        .list-group-mail-menu.list-group-item;
+
+        &.active,
+        &:hover,
+        &:focus {
+            background: #e3ecf2;
+
+            .list-group-item-text {
+                color: inherit;
+            }
+        }
+    }
+}
+
+.mail-content {
+}
 /*=================================================*/
 //= Footer
 /*=================================================*/
-
 /*=================================================*/
 //= Miscellaneous/Extras
 /*=================================================*/
