@@ -937,13 +937,42 @@
 // --------------------------------------------------
 @import "../lib/ionicons/less/ionicons";
 
-/*html, body, main, aside, div[ui-view] {
-    //&:extend(.full-height);
-}*/
+/*=================================================*/
+//= Scaffolding
+/*=================================================*/
+html, body, main, aside, div[ui-view] {
+    &:extend(.full-height);
+}
 
-/*--------------------------------------------------------------*/
+body {
+    padding-top: @navbar-height;
+
+    main {
+        margin-left: 400px;
+    }
+
+    aside {
+        width: 400px;
+        .pull-left;
+    }
+
+    footer {
+        background: red;
+        width: 300px;
+        /* margin-bottom: 287px; */
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    main, aside {
+        .relative;
+    }
+}
+
+/*=================================================*/
 /* =Reset
-/*--------------------------------------------------------------*/
+/*=================================================*/
 .radius-none {
     border-radius: 0 !important;
 }
@@ -965,26 +994,33 @@
     border-radius: 0 !important;
 }
 
-/*--------------------------------------------------------------*/
+/*=================================================*/
 /* =Common
-/*--------------------------------------------------------------*/
+/*=================================================*/
 .relative {
     position: relative;
 }
 
-.absolute {
+.absolute(@top, @left) {
+    top: @top;
+    left: @left;
     position: absolute;
+}
 
-    &.absolute-center {
-        width: 50%;
-        height: 50%;
-        overflow: auto;
-        margin: auto;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-    }
+.absolute-center {
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    margin: auto;
+    bottom: 0;
+    right: 0;
+    .absolute(0, 0);
+}
+
+.absolute-full-height {
+    height: 100%;
+    .scroll-y;
+    .absolute(0, 0);
 }
 
 .strong {
@@ -1026,17 +1062,25 @@
 }
 
 .full-height {
-    height: 100vh;
+    height: 100%;
+    min-height: 100%;
 }
 /* mar, pad*/
 .makeSpacing();
+
 /*=================================================*/
 //= Header
 /*=================================================*/
 /*=================================================*/
 //= Navbar
 /*=================================================*/
-
+/*navbar aside*/
+.navbar-default {
+    width: 100%;
+    z-index: @zindex-navbar;
+    .mar-bottom-none;
+    .absolute(-@navbar-height, 0);
+}
 /*search*/
 .navbar-search {
     .pull-left;
@@ -1051,22 +1095,15 @@
         }
     }
 }
+
 /*=================================================*/
 //= Structure
 /*=================================================*/
-main, footer {
-    margin-left: 400px;
-}
-
-aside {
-    width: 400px;
-    .pull-left;
-}
-
-
 .list-group-mail-menu {
     width: 50px;
     .pull-left;
+    .mar-bottom-none;
+    &:extend(.full-height);
 
     .list-group-item {
         color: inherit;
@@ -1083,7 +1120,6 @@ aside {
             }
         }
 
-
         .icon {
             font-size: @font-size-h2;
         }
@@ -1093,6 +1129,10 @@ aside {
 .list-group-mail-items {
     margin-left: 50px;
     background: #ebebeb;
+    width: 350px;
+    .scroll-y;
+    .mar-bottom-none;
+    &:extend(.full-height);
 
     .list-group-item {
         .list-group-mail-menu.list-group-item;

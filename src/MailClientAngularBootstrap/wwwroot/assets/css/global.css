@@ -9681,12 +9681,33 @@ MIT License: https://github.com/driftyco/ionicons
 .ion-xbox:before {
   content: "\f30c";
 }
-/*html, body, main, aside, div[ui-view] {
-    //&:extend(.full-height);
-}*/
-/*--------------------------------------------------------------*/
+/*=================================================*/
+/*=================================================*/
+body {
+  padding-top: 50px;
+}
+body main {
+  margin-left: 400px;
+}
+body aside {
+  width: 400px;
+  float: left !important;
+}
+body footer {
+  background: red;
+  width: 300px;
+  /* margin-bottom: 287px; */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+body main,
+body aside {
+  position: relative;
+}
+/*=================================================*/
 /* =Reset
-/*--------------------------------------------------------------*/
+/*=================================================*/
 .radius-none {
   border-radius: 0 !important;
 }
@@ -9704,24 +9725,29 @@ MIT License: https://github.com/driftyco/ionicons
 .border-radius-none {
   border-radius: 0 !important;
 }
-/*--------------------------------------------------------------*/
+/*=================================================*/
 /* =Common
-/*--------------------------------------------------------------*/
+/*=================================================*/
 .relative {
   position: relative;
 }
-.absolute {
-  position: absolute;
-}
-.absolute.absolute-center {
+.absolute-center {
   width: 50%;
   height: 50%;
   overflow: auto;
   margin: auto;
-  top: 0;
-  left: 0;
   bottom: 0;
   right: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.absolute-full-height {
+  height: 100%;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+  position: absolute;
 }
 .strong {
   font-weight: 700;
@@ -9752,8 +9778,16 @@ MIT License: https://github.com/driftyco/ionicons
 .cursor-pointer-none {
   cursor: default;
 }
-.full-height {
-  height: 100vh;
+.full-height,
+html,
+body,
+main,
+aside,
+div[ui-view],
+.list-group-mail-menu,
+.list-group-mail-items {
+  height: 100%;
+  min-height: 100%;
 }
 /* mar, pad*/
 .mar-none {
@@ -10030,6 +10064,15 @@ MIT License: https://github.com/driftyco/ionicons
 /*=================================================*/
 /*=================================================*/
 /*=================================================*/
+/*navbar aside*/
+.navbar-default {
+  width: 100%;
+  z-index: 1000;
+  margin-bottom: 0 !important;
+  top: -50px;
+  left: 0;
+  position: absolute;
+}
 /*search*/
 .navbar-search {
   float: left !important;
@@ -10044,17 +10087,10 @@ MIT License: https://github.com/driftyco/ionicons
 }
 /*=================================================*/
 /*=================================================*/
-main,
-footer {
-  margin-left: 400px;
-}
-aside {
-  width: 400px;
-  float: left !important;
-}
 .list-group-mail-menu {
   width: 50px;
   float: left !important;
+  margin-bottom: 0 !important;
 }
 .list-group-mail-menu .list-group-item {
   color: inherit;
@@ -10077,6 +10113,9 @@ aside {
 .list-group-mail-items {
   margin-left: 50px;
   background: #ebebeb;
+  width: 350px;
+  overflow-y: auto;
+  margin-bottom: 0 !important;
 }
 .list-group-mail-items .list-group-item {
   color: inherit;
