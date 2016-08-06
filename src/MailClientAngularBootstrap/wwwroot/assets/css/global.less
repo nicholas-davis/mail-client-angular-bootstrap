@@ -938,6 +938,18 @@
 @import "../lib/ionicons/less/ionicons";
 
 /*=================================================*/
+/* =Mixins
+/*=================================================*/
+.absolute(@top, @left, @bottom, @right) {
+    top: @top;
+    left: @left;
+    bottom: @bottom;
+    right: @right;
+    position: absolute;
+}
+
+
+/*=================================================*/
 //= Scaffolding
 /*=================================================*/
 html, body, main, aside, div[ui-view] {
@@ -1001,26 +1013,18 @@ body {
     position: relative;
 }
 
-.absolute(@top, @left) {
-    top: @top;
-    left: @left;
-    position: absolute;
-}
-
 .absolute-center {
     width: 50%;
     height: 50%;
     overflow: auto;
     margin: auto;
-    bottom: 0;
-    right: 0;
-    .absolute(0, 0);
+    .absolute(0, 0, 0, 0);
 }
 
 .absolute-full-height {
     height: 100%;
     .scroll-y;
-    .absolute(0, 0);
+    .absolute(0, 0, inherit, inherit);
 }
 
 .strong {
@@ -1068,40 +1072,81 @@ body {
 /* mar, pad*/
 .makeSpacing();
 
+
 /*=================================================*/
-//= Header
-/*=================================================*/
-/*=================================================*/
-//= Navbar
+//= Header/Navbar
 /*=================================================*/
 /*navbar aside*/
-.navbar-default {
+.navbar {
     width: 100%;
     z-index: @zindex-navbar;
     .mar-bottom-none;
-    .absolute(-@navbar-height, 0);
-}
-/*search*/
-.navbar-search {
-    .pull-left;
+    .border-none;
+    .border-radius-none;
+    .absolute(-@navbar-height, 0, inherit, inherit);
 
-    .navbar-form {
-        width: 100%;
+    .navbar-brand {
+        width: @navbar-height;
+        font-size: @font-size-h3;
+        .relative;
+        .pad-md;
+        .text-center;
+
+        &,
+        &:hover,
+        &:focus {
+            background: #cacaca;
+        }
+
+        .navbar-brand-text {
+            font-size: 8px;
+            width: 100%;
+            .absolute(28px, 0, inherit, inherit);
+        }
+    }
+
+    .navbar-form { //search
+        background: #dedcdc;
         .pad-none;
         .border-none;
+        .mar-top-none;
+        .mar-bottom-none;
 
         .input-group {
-            width: 350px;
+            width: 340px;
+
+            .input-group-addon {
+                .bg-none;
+                .border-none;
+                .pad-right-none;
+            }
+
+            .form-control {
+                height: @navbar-height;
+                .border-none;
+                .bg-none;
+                .pad-right-sm;
+
+                &,
+                &:hover,
+                &:focus,
+                &:active {
+                    .box-shadow-none;
+                }
+            }
         }
     }
 }
 
+
 /*=================================================*/
 //= Structure
 /*=================================================*/
+/*aside main menu*/
 .list-group-mail-menu {
     width: 50px;
     .pull-left;
+    .scroll-y;
     .mar-bottom-none;
     &:extend(.full-height);
 
@@ -1126,6 +1171,7 @@ body {
     }
 }
 
+/*inbox, draft, sent, archive, trush*/
 .list-group-mail-items {
     margin-left: 50px;
     background: #ebebeb;

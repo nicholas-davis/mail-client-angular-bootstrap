@@ -9682,6 +9682,9 @@ MIT License: https://github.com/driftyco/ionicons
   content: "\f30c";
 }
 /*=================================================*/
+/* =Mixins
+/*=================================================*/
+/*=================================================*/
 /*=================================================*/
 body {
   padding-top: 50px;
@@ -9736,10 +9739,10 @@ body aside {
   height: 50%;
   overflow: auto;
   margin: auto;
-  bottom: 0;
-  right: 0;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   position: absolute;
 }
 .absolute-full-height {
@@ -9747,6 +9750,8 @@ body aside {
   overflow-y: auto;
   top: 0;
   left: 0;
+  bottom: inherit;
+  right: inherit;
   position: absolute;
 }
 .strong {
@@ -10062,34 +10067,75 @@ div[ui-view],
 }
 /*=================================================*/
 /*=================================================*/
-/*=================================================*/
-/*=================================================*/
 /*navbar aside*/
-.navbar-default {
+.navbar {
   width: 100%;
   z-index: 1000;
   margin-bottom: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
   top: -50px;
   left: 0;
+  bottom: inherit;
+  right: inherit;
   position: absolute;
 }
-/*search*/
-.navbar-search {
-  float: left !important;
+.navbar .navbar-brand {
+  width: 50px;
+  font-size: 24px;
+  position: relative;
+  padding: 8px !important;
+  text-align: center;
 }
-.navbar-search .navbar-form {
+.navbar .navbar-brand,
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+  background: #cacaca;
+}
+.navbar .navbar-brand .navbar-brand-text {
+  font-size: 8px;
   width: 100%;
+  top: 28px;
+  left: 0;
+  bottom: inherit;
+  right: inherit;
+  position: absolute;
+}
+.navbar .navbar-form {
+  background: #dedcdc;
   padding: 0 !important;
   border: none !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
-.navbar-search .navbar-form .input-group {
-  width: 350px;
+.navbar .navbar-form .input-group {
+  width: 340px;
+}
+.navbar .navbar-form .input-group .input-group-addon {
+  background: none !important;
+  border: none !important;
+  padding-right: 0 !important;
+}
+.navbar .navbar-form .input-group .form-control {
+  height: 50px;
+  border: none !important;
+  background: none !important;
+  padding-right: 5px !important;
+}
+.navbar .navbar-form .input-group .form-control,
+.navbar .navbar-form .input-group .form-control:hover,
+.navbar .navbar-form .input-group .form-control:focus,
+.navbar .navbar-form .input-group .form-control:active {
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
 }
 /*=================================================*/
 /*=================================================*/
+/*aside main menu*/
 .list-group-mail-menu {
   width: 50px;
   float: left !important;
+  overflow-y: auto;
   margin-bottom: 0 !important;
 }
 .list-group-mail-menu .list-group-item {
@@ -10110,6 +10156,7 @@ div[ui-view],
 .list-group-mail-menu .list-group-item .icon {
   font-size: 30px;
 }
+/*inbox, draft, sent, archive, trush*/
 .list-group-mail-items {
   margin-left: 50px;
   background: #ebebeb;
