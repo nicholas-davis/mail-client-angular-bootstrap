@@ -19,7 +19,7 @@
 @gray-light: lighten(@gray-base, 46.7%); // #777
 @gray-lighter: lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary: darken(#428bca, 6.5%); // #337ab7
+@brand-primary: #125e85; // #125e85
 @brand-success: #5cb85c;
 @brand-info: #5bc0de;
 @brand-warning: #f0ad4e;
@@ -948,6 +948,9 @@
     position: absolute;
 }
 
+.icon-size(@size) {
+    font-size: @size;
+}
 
 /*=================================================*/
 //= Scaffolding
@@ -1076,7 +1079,7 @@ body {
 /*=================================================*/
 //= Header/Navbar
 /*=================================================*/
-/*navbar aside*/
+/*navbar aside and main*/
 .navbar {
     width: 100%;
     z-index: @zindex-navbar;
@@ -1085,7 +1088,7 @@ body {
     .border-radius-none;
     .absolute(-@navbar-height, 0, inherit, inherit);
 
-    .navbar-brand {
+    .navbar-brand { //navbar aside brand
         width: @navbar-height;
         font-size: @font-size-h3;
         .relative;
@@ -1105,7 +1108,7 @@ body {
         }
     }
 
-    .navbar-form { //search
+    .navbar-form { //navbar aside search
         background: #dedcdc;
         .pad-none;
         .border-none;
@@ -1123,9 +1126,11 @@ body {
 
             .form-control {
                 height: @navbar-height;
+                font-size: @font-size-h4;
                 .border-none;
                 .bg-none;
-                .pad-right-sm;
+                .pad-right-xs;
+                .pad-left-xs;
 
                 &,
                 &:hover,
@@ -1136,12 +1141,23 @@ body {
             }
         }
     }
+
+    .navbar-nav-icons {
+        li {
+
+            a {
+                .pad-top-lg;
+                .pad-bottom-lg;
+            }
+        }
+    }
 }
 
 
 /*=================================================*/
 //= Structure
 /*=================================================*/
+
 /*aside main menu*/
 .list-group-mail-menu {
     width: 50px;
@@ -1159,14 +1175,11 @@ body {
         &:hover,
         &:focus {
             color: inherit;
+            background: #ebebeb;
 
             .list-group-item-text {
                 color: inherit;
             }
-        }
-
-        .icon {
-            font-size: @font-size-h2;
         }
     }
 }
@@ -1181,25 +1194,89 @@ body {
     &:extend(.full-height);
 
     .list-group-item {
-        .list-group-mail-menu.list-group-item;
+        color: inherit;
+        background: none;
+        .border-radius-none;
 
         &.active,
         &:hover,
         &:focus {
             background: #e3ecf2;
+            border-color: darken(#e3ecf2, 5%);
 
+            .list-group-item-heading,
+            .list-group-item-date,
+            .list-group-item-actions,
             .list-group-item-text {
-                color: inherit;
+                color: @brand-primary;
             }
+        }
+
+        &:first-child {
+            border-top: none;
+        }
+
+        .list-group-item-heading {
+            .mar-bottom-xs;
+        }
+
+        .list-group-item-date {
+            font-size: 10px;
+            display: block;
+            .mar-top-none;
+        }
+
+        .list-group-item-actions {
+            .mar-none;
+
+            li {
+
+                &:first-child {
+                    .pad-left-none;
+                }
+            }
+        }
+
+        .list-group-item-text {
+            font-size: @font-size-h6;
         }
     }
 }
 
 .mail-content {
 }
+
+
 /*=================================================*/
 //= Footer
 /*=================================================*/
 /*=================================================*/
 //= Miscellaneous/Extras
 /*=================================================*/
+
+/*icon*/
+.icon {
+    &.icon-1x {
+        .icon-size(1em)
+    }
+
+    &.icon-2x {
+        .icon-size(2em)
+    }
+
+    &.icon-3x {
+        .icon-size(3em)
+    }
+
+    &.icon-4x {
+        .icon-size(4em)
+    }
+
+    &.icon-5x {
+        .icon-size(5em)
+    }
+
+    &.icon-6x {
+        .icon-size(6em)
+    }
+}
