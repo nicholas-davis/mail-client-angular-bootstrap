@@ -1030,7 +1030,7 @@ body {
     .absolute(0, 0, inherit, inherit);
 }
 
-.strong {
+.text-strong {
     font-weight: 700;
 }
 
@@ -1091,6 +1091,7 @@ body {
     .navbar-brand { //navbar aside brand
         width: @navbar-height;
         font-size: @font-size-h3;
+        color: #4d4d4d;
         .relative;
         .pad-md;
         .text-center;
@@ -1148,6 +1149,10 @@ body {
             a {
                 .pad-top-lg;
                 .pad-bottom-lg;
+
+                .icon {
+                    color: @brand-primary;
+                }
             }
         }
     }
@@ -1170,15 +1175,21 @@ body {
         color: inherit;
         background: none;
         .border-none;
+        .text-center;
 
-        &.active,
         &:hover,
         &:focus {
-            color: inherit;
+
+            .icon {
+                color: #4d4d4d;
+            }
+        }
+
+        &.active {
             background: #ebebeb;
 
-            .list-group-item-text {
-                color: inherit;
+            .icon {
+                color: @brand-primary;
             }
         }
     }
@@ -1197,9 +1208,15 @@ body {
         color: inherit;
         background: none;
         .border-radius-none;
+        border-left: none;
+        border-right: none;
+
+        &:hover {
+            color: inherit;
+            background: none;
+        }
 
         &.active,
-        &:hover,
         &:focus {
             background: #e3ecf2;
             border-color: darken(#e3ecf2, 5%);
@@ -1256,6 +1273,8 @@ body {
 
 /*icon*/
 .icon {
+    color: #8a8a8a;
+
     &.icon-1x {
         .icon-size(1em)
     }

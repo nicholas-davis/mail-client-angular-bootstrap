@@ -9754,7 +9754,7 @@ body aside {
   right: inherit;
   position: absolute;
 }
-.strong {
+.text-strong {
   font-weight: 700;
 }
 .text-overflow-ellipsis {
@@ -10083,6 +10083,7 @@ div[ui-view],
 .navbar .navbar-brand {
   width: 50px;
   font-size: 24px;
+  color: #4d4d4d;
   position: relative;
   padding: 8px !important;
   text-align: center;
@@ -10135,6 +10136,9 @@ div[ui-view],
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
+.navbar .navbar-nav-icons li a .icon {
+  color: #125e85;
+}
 /*=================================================*/
 /*=================================================*/
 /*aside main menu*/
@@ -10148,17 +10152,17 @@ div[ui-view],
   color: inherit;
   background: none;
   border: none !important;
+  text-align: center;
 }
-.list-group-mail-menu .list-group-item.active,
-.list-group-mail-menu .list-group-item:hover,
-.list-group-mail-menu .list-group-item:focus {
-  color: inherit;
+.list-group-mail-menu .list-group-item:hover .icon,
+.list-group-mail-menu .list-group-item:focus .icon {
+  color: #4d4d4d;
+}
+.list-group-mail-menu .list-group-item.active {
   background: #ebebeb;
 }
-.list-group-mail-menu .list-group-item.active .list-group-item-text,
-.list-group-mail-menu .list-group-item:hover .list-group-item-text,
-.list-group-mail-menu .list-group-item:focus .list-group-item-text {
-  color: inherit;
+.list-group-mail-menu .list-group-item.active .icon {
+  color: #125e85;
 }
 /*inbox, draft, sent, archive, trush*/
 .list-group-mail-items {
@@ -10172,24 +10176,25 @@ div[ui-view],
   color: inherit;
   background: none;
   border-radius: 0 !important;
+  border-left: none;
+  border-right: none;
+}
+.list-group-mail-items .list-group-item:hover {
+  color: inherit;
+  background: none;
 }
 .list-group-mail-items .list-group-item.active,
-.list-group-mail-items .list-group-item:hover,
 .list-group-mail-items .list-group-item:focus {
   background: #e3ecf2;
   border-color: #d2e0ea;
 }
 .list-group-mail-items .list-group-item.active .list-group-item-heading,
-.list-group-mail-items .list-group-item:hover .list-group-item-heading,
 .list-group-mail-items .list-group-item:focus .list-group-item-heading,
 .list-group-mail-items .list-group-item.active .list-group-item-date,
-.list-group-mail-items .list-group-item:hover .list-group-item-date,
 .list-group-mail-items .list-group-item:focus .list-group-item-date,
 .list-group-mail-items .list-group-item.active .list-group-item-actions,
-.list-group-mail-items .list-group-item:hover .list-group-item-actions,
 .list-group-mail-items .list-group-item:focus .list-group-item-actions,
 .list-group-mail-items .list-group-item.active .list-group-item-text,
-.list-group-mail-items .list-group-item:hover .list-group-item-text,
 .list-group-mail-items .list-group-item:focus .list-group-item-text {
   color: #125e85;
 }
@@ -10218,6 +10223,9 @@ div[ui-view],
 /*=================================================*/
 /*=================================================*/
 /*icon*/
+.icon {
+  color: #8a8a8a;
+}
 .icon.icon-1x {
   font-size: 1em;
 }

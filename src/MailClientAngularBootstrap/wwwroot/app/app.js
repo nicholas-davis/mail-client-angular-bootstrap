@@ -36,7 +36,55 @@ mailClientApp.config(['$stateProvider', '$urlRouterProvider',
             resolve: {
                 pageTitle: [
                     '$stateParams', function ($stateParams) {
-                        $stateParams.pageTitle = "Inbox"; 
+                        $stateParams.pageTitle = "Inbox";
+                    }
+                ]
+            }
+        }).state('Mail.Draft', {
+            url: '^/draft',
+            templateUrl: 'app/components/draft/draft-view.html',
+            controller: "DraftController",
+            controllerAs: "draft",
+            resolve: {
+                pageTitle: [
+                    '$stateParams', function ($stateParams) {
+                        $stateParams.pageTitle = "Draft";
+                    }
+                ]
+            }
+        }).state('Mail.Sent', {
+            url: '^/sent',
+            templateUrl: 'app/components/sent/sent-view.html',
+            controller: "SentController",
+            controllerAs: "sent",
+            resolve: {
+                pageTitle: [
+                    '$stateParams', function ($stateParams) {
+                        $stateParams.pageTitle = "Sent";
+                    }
+                ]
+            }
+        }).state('Mail.Archive', {
+            url: '^/archive',
+            templateUrl: 'app/components/archive/archive-view.html',
+            controller: "ArchiveController",
+            controllerAs: "archive",
+            resolve: {
+                pageTitle: [
+                    '$stateParams', function ($stateParams) {
+                        $stateParams.pageTitle = "Archive";
+                    }
+                ]
+            }
+        }).state('Mail.Trash', {
+            url: '^/trash',
+            templateUrl: 'app/components/trash/trash-view.html',
+            controller: "TrashController",
+            controllerAs: "trash",
+            resolve: {
+                pageTitle: [
+                    '$stateParams', function ($stateParams) {
+                        $stateParams.pageTitle = "Trash";
                     }
                 ]
             }
