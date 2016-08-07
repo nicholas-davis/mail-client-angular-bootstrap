@@ -1,14 +1,20 @@
 //Mail Client App
 var mailClientApp = angular.module('mailClientApp', [
+  'mailClientApp.mail',
+  'mailClientApp.inbox',
+  'mailClientApp.draft',
+  'mailClientApp.sent',
+  'mailClientApp.archive',
+  'mailClientApp.trash',
   'ui.bootstrap',
   'ui.router'
-]); 
+]);
 
 mailClientApp.run(['$rootScope', '$state', '$stateParams',
     function ($rootScope, $state, $stateParams) {
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
-       
+
         $rootScope.$on('$stateChangeSuccess', function () {
             //Page title
             $rootScope.pageTitle = $stateParams.pageTitle;
@@ -20,7 +26,7 @@ mailClientApp.run(['$rootScope', '$state', '$stateParams',
 
 mailClientApp.config(['$stateProvider', '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider) {
-
+        console.log(window.location.origin)
         $urlRouterProvider.otherwise("/inbox");
 
         $stateProvider.state('Mail', { //parent   
@@ -91,3 +97,8 @@ mailClientApp.config(['$stateProvider', '$urlRouterProvider',
         });
     }
 ]);
+
+mailClientApp.constant('config', {
+    apiUrl: window.location.origin + '/app/api/',
+    baseUrl: '/',
+});

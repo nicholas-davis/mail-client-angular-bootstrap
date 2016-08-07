@@ -10153,6 +10153,7 @@ div[ui-view],
   background: none;
   border: none !important;
   text-align: center;
+  padding: 10px !important;
 }
 .list-group-mail-menu .list-group-item:hover .icon,
 .list-group-mail-menu .list-group-item:focus .icon {
