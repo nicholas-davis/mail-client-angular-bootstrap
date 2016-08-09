@@ -26,7 +26,6 @@ mailClientApp.run(['$rootScope', '$state', '$stateParams',
 
 mailClientApp.config(['$stateProvider', '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider) {
-        console.log(window.location.origin)
         $urlRouterProvider.otherwise("/inbox");
 
         $stateProvider.state('Mail', { //parent   

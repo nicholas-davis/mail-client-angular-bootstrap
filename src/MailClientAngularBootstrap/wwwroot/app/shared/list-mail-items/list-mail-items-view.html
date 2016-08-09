@@ -1,0 +1,18 @@
+﻿<div class="list-group list-group-mail-items">
+    <a href="#" class="list-group-item" ng-repeat="mail in vm.mail.inbox">
+        <h5 class="list-group-item-heading">{{mail.subject}}</h5>
+        <time class="list-group-item-date" datetime="{{mail.date}}">{{mail.date}}</time>
+        <ul class="list-group-item-actions list-unstyled list-inline">
+            <li role="presentation">
+                <span>icon</span>
+            </li>
+            <li role="presentation">
+                <span>icon</span>
+            </li>
+            <li role="presentation">
+                <span>icon</span>
+            </li>
+        </ul>
+        <p class="list-group-item-text">{{mail.shortDescription}}...</p>
+    </a>
+</div>

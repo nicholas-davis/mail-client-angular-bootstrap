@@ -1,4 +1,4 @@
-﻿//MailService
+﻿//UserService
 mailModule.factory('UserService', ['config', '$http',
     function (config, $http) {
 
