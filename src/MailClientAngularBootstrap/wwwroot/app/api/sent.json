@@ -1,0 +1,20 @@
+{
+  "sent": [
+    {
+      "from": "Nick Davis",
+      "to": "John Smith",
+      "subject": "subject text",
+      "date": "date text",
+      "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt magna libero, ultricies imperdiet ligula dapibus eu. Sed viverra mi vitae arcu porttitor"
+    },
+    {
+      "from": "Nick Davis",
+      "to": "Bob Dole",
+      "subject": "subject text 2",
+      "date": "date text 2",
+      "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit 2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt magna libero, ultricies imperdiet ligula dapibus eu. Sed viverra mi vitae arcu porttitor 2"
+    }
+  ]
+}
