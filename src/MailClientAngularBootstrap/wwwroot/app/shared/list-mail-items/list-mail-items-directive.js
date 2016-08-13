@@ -8,7 +8,7 @@ mailModule.directive('listMailItems', [
             bindToController: {
                 mail: '=mail'
             },
-            controller: function ($scope, $rootScope) {
+            controller: function ($scope) {
 
                 $scope.$on("mail", function mailEvent(event, mail) {
                     $scope.mail = mail;

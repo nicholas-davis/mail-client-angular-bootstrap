@@ -1,17 +1,19 @@
 {
-  "inbox": [
+  "messages": [
     {
+      "id": 0,
       "from": "John Smith",
       "to": "Nick Davis",
-      "subject": "subject text",
+      "subject": "subject text inbox 1",
       "date": "date text",
       "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt magna libero, ultricies imperdiet ligula dapibus eu. Sed viverra mi vitae arcu porttitor"
     },
     {
+      "id": 1,
       "from": "Bob Dole",
       "to": "Nick Davis",
-      "subject": "subject text 2",
+      "subject": "subject text inbox 2",
       "date": "date text 2",
       "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit 2",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt magna libero, ultricies imperdiet ligula dapibus eu. Sed viverra mi vitae arcu porttitor 2"

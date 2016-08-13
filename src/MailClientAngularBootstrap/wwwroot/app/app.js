@@ -30,6 +30,9 @@ mailClientApp.config(['$stateProvider', '$urlRouterProvider',
 
         $stateProvider.state('Mail', { //parent   
             abstract: true,
+            params: {
+                messageID: null,
+            },
             templateUrl: 'app/components/mail/mail-view.html',
             controller: "MailController",
             controllerAs: "mail",
@@ -44,7 +47,9 @@ mailClientApp.config(['$stateProvider', '$urlRouterProvider',
                         $stateParams.pageTitle = "Inbox";
                     }
                 ]
-            }
+            },
+        }).state('Mail.Inbox.Message', {
+            url: "^/inbox", //without :messageID === pretty URL
         }).state('Mail.Draft', {
             url: '^/draft',
             templateUrl: 'app/components/draft/draft-view.html',
