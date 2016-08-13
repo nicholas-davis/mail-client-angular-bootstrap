@@ -13,5 +13,7 @@ inboxModule.controller('InboxController', ['$rootScope', '$scope', '$stateParams
             });
         });
 
+        //Message ID
+        $scope.messageID = $stateParams.messageID;
     }
 ]);
