@@ -12,8 +12,5 @@ inboxModule.controller('InboxController', ['$rootScope', '$scope', '$stateParams
                 UtilitiesService.broadcast('mail', $scope.mail);
             });
         });
-
-        //Message ID
-        $scope.messageID = $stateParams.messageID;
     }
 ]);

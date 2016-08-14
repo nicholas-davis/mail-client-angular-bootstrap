@@ -11,5 +11,7 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'Us
             $scope.user.lastName = $scope.user.lastName;
         });
 
+        //Message ID
+        $scope.messageID = $stateParams.messageID;
     }
 ]);
