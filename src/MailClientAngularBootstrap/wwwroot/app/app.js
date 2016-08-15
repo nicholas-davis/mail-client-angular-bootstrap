@@ -15,9 +15,19 @@ mailClientApp.run(['$rootScope', '$state', '$stateParams',
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
 
-        $rootScope.$on('$stateChangeSuccess', function () {
+        $rootScope.$on('$stateChangeSuccess', function (ev, to, toParams, from, fromParams) {
             //Page title
             $rootScope.pageTitle = $stateParams.pageTitle;
+
+            //Previous/Current state
+            $rootScope.previousState = from.name;
+            $rootScope.previousStateURL = from.url;
+            $rootScope.currentState = to.name;
+            $rootScope.currentStateURL = to.url;
+            //console.log('Previous state:' + $rootScope.previousState)
+            //console.log(fromParams)
+            //console.log('Current state:' + $rootScope.currentState)
+
             //If modal is opened, discard modal when the user clicks on back btn
             //$uibModalStack.dismissAll('cancel');
         });
@@ -30,12 +40,18 @@ mailClientApp.config(['$stateProvider', '$urlRouterProvider',
 
         $stateProvider.state('Mail', { //parent   
             abstract: true,
-            params: {
-                messageID: null,
-            },
             templateUrl: 'app/components/mail/mail-view.html',
             controller: "MailController",
             controllerAs: "mail",
+        }).state('Mail.Message', {
+            url: null, //without :messageID === pretty URL
+            templateUrl: 'app/components/message/message-view.html',
+            params: {
+                messageID: null
+            },
+            controller: function ($scope, $stateParams) {
+                $scope.messageID = $stateParams.messageID;
+            }
         }).state('Mail.Inbox', {
             url: '^/inbox',
             templateUrl: 'app/components/inbox/inbox-view.html',
@@ -47,9 +63,7 @@ mailClientApp.config(['$stateProvider', '$urlRouterProvider',
                         $stateParams.pageTitle = "Inbox";
                     }
                 ]
-            },
-        }).state('Mail.Inbox.Message', {
-            url: "^/inbox", //without :messageID === pretty URL
+            }
         }).state('Mail.Draft', {
             url: '^/draft',
             templateUrl: 'app/components/draft/draft-view.html',

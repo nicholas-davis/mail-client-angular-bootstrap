@@ -1,5 +1,5 @@
 ﻿<div class="list-group list-group-mail-items">
-    <a ui-sref="Mail.Inbox.Message({ messageID: mail.id })" class="list-group-item" ng-repeat="mail in vm.mail.messages track by $index">
+    <a ui-sref="Mail.Message({ messageID: mail.id })" class="list-group-item" ng-repeat="mail in vm.mail.messages track by $index">
         <h5 class="list-group-item-heading">{{mail.subject}}</h5>
         <time class="list-group-item-date" datetime="{{mail.date}}">{{mail.date}}</time>
         <ul class="list-group-item-actions list-unstyled list-inline">
