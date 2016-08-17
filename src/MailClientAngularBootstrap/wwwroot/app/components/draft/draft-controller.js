@@ -1,8 +1,16 @@
 ﻿//DraftController
 var draftModule = angular.module('mailClientApp.draft', []);
 
-draftModule.controller('DraftController', ['$scope', '$stateParams', '$state',
-    function ($scope, $stateParams, $state) {
-      
+draftModule.controller('DraftController', ['$rootScope', '$scope', '$stateParams', '$state', 'UtilitiesService', 'DraftService', '$timeout',
+    function ($rootScope, $scope, $stateParams, $state, UtilitiesService, DraftService, $timeout) {
+
+        //Draft data
+        DraftService.getDraftMail().then(function (response) {
+            $scope.mail = response;
+
+            $timeout(function () {
+                UtilitiesService.broadcast('mail', $scope.mail);
+            });
+        });
     }
 ]);

@@ -47,10 +47,35 @@ mailClientApp.config(['$stateProvider', '$urlRouterProvider',
             url: null, //without :messageID === pretty URL
             templateUrl: 'app/components/message/message-view.html',
             params: {
-                messageID: null
+                messageID: null,
+                guid: null,
+                type: null,
+                fromFirstName: null,
+                fromLastName: null,
+                fromEmail: null,
+                toFirstName: null,
+                toLastName: null,
+                toEmail: null,
+                subject: null,
+                message: null,
+                date: null,
+                tags: null,
             },
             controller: function ($scope, $stateParams) {
                 $scope.messageID = $stateParams.messageID;
+                $scope.guid = $stateParams.guid;
+                $scope.type = $stateParams.type;
+                $scope.fromFirstName = $stateParams.fromFirstName;
+                $scope.fromLastName = $stateParams.fromLastName;
+                $scope.fromEmail = $stateParams.fromEmail;
+                $scope.toFirstName = $stateParams.toFirstName;
+                $scope.toLastName = $stateParams.toLastName;
+                $scope.toEmail = $stateParams.toEmail;
+                $scope.subject = $stateParams.subject;
+                $scope.message = $stateParams.message;
+                $scope.date = $stateParams.date;
+                $scope.tags = $stateParams.tags;
+                console.log($stateParams)
             }
         }).state('Mail.Inbox', {
             url: '^/inbox',
