@@ -10165,7 +10165,7 @@ div[ui-view],
 .list-group-mail-menu .list-group-item.active .icon {
   color: #125e85;
 }
-/*inbox, draft, sent, archive, trush*/
+/*inbox, draft, sent, archive, trash mail items*/
 .list-group-mail-items {
   margin-left: 50px;
   background: #ebebeb;
@@ -10218,6 +10218,22 @@ div[ui-view],
 }
 .list-group-mail-items .list-group-item .list-group-item-text {
   font-size: 12px;
+}
+.mail-content .mail-header .mail-header-subject {
+  margin-bottom: 3px !important;
+}
+.mail-content .mail-header .mail-header-from {
+  margin-bottom: 0 !important;
+}
+.mail-content .mail-header .mail-header-to {
+  margin-top: 5px !important;
+}
+.mail-content .mail-header .mail-header-date,
+.mail-content .mail-header .mail-header-from {
+  margin-top: 0 !important;
+}
+.mail-content .mail-message {
+  background: #FFF;
 }
 /*=================================================*/
 /*=================================================*/

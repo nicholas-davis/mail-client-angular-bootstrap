@@ -21,3 +21,4 @@
 /// <reference path="assets/lib/angular-ui-router/release/angular-ui-router.js" />
 /// <reference path="assets/lib/bootstrap/dist/js/bootstrap.js" />
 /// <reference path="assets/lib/jquery/dist/jquery.js" />
+/// <reference path="assets/lib/moment/moment.js" />

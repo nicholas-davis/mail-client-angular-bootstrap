@@ -1196,7 +1196,7 @@ body {
     }
 }
 
-/*inbox, draft, sent, archive, trush*/
+/*inbox, draft, sent, archive, trash mail items*/
 .list-group-mail-items {
     margin-left: 50px;
     background: #ebebeb;
@@ -1262,6 +1262,30 @@ body {
 }
 
 .mail-content {
+    .mail-header {
+        .mail-header-subject {
+            .mar-bottom-xs;
+        }
+
+        .mail-header-date {
+        }
+
+        .mail-header-from {
+            .mar-bottom-none;
+        }
+
+        .mail-header-to {
+            .mar-top-sm;
+        }
+
+        .mail-header-date, .mail-header-from {
+            .mar-top-none;
+        }
+    }
+
+    .mail-message {
+        background: #FFF;
+    }
 }
 
 

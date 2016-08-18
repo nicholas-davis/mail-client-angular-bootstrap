@@ -7,8 +7,10 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'Us
         //User basic data
         UserService.getUser().then(function (response) {
             $scope.user = response.user[0];
-            $scope.user.firstName = $scope.user.firstName;
-            $scope.user.lastName = $scope.user.lastName;
+            $scope.user = {
+                firstName: $scope.user.firstName,
+                lastName: $scope.user.lastName
+            }
         });
 
     }

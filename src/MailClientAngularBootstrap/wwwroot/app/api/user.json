@@ -1,8 +1,9 @@
 {
   "user": [
     {
-      "firstName": "John",
-      "lastName": "Doe"
+      "firstName": "Nicholas",
+      "lastName": "Davis",
+      "email": "hire@nicholasdavis.co" 
     }
   ]
 }
