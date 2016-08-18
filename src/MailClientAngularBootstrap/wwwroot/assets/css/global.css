@@ -9714,6 +9714,9 @@ body aside {
 .radius-none {
   border-radius: 0 !important;
 }
+.float-none {
+  float: none !important;
+}
 .bg-none {
   background: none !important;
 }
@@ -10235,6 +10238,32 @@ div[ui-view],
 .mail-content .mail-message {
   background: #FFF;
 }
+.mail-content .mail-message .nav-pills-mail-actions {
+  text-align: right;
+}
+.mail-content .mail-message .nav-pills-mail-actions > li {
+  float: none !important;
+  display: inline-block;
+}
+.mail-content .mail-message .nav-pills-mail-actions > li > a {
+  color: inherit;
+  background: none;
+  border: none !important;
+  text-align: center;
+  padding: 10px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+.mail-content .mail-message .nav-pills-mail-actions > li > a:hover .icon,
+.mail-content .mail-message .nav-pills-mail-actions > li > a:focus .icon {
+  color: #4d4d4d;
+}
+.mail-content .mail-message .nav-pills-mail-actions > li > a.active {
+  background: #ebebeb;
+}
+.mail-content .mail-message .nav-pills-mail-actions > li > a.active .icon {
+  color: #125e85;
+}
 /*=================================================*/
 /*=================================================*/
 /*=================================================*/
@@ -10242,6 +10271,13 @@ div[ui-view],
 /*icon*/
 .icon {
   color: #8a8a8a;
+}
+.icon.icon-flipped {
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  display: inline-block;
 }
 .icon.icon-1x {
   font-size: 1em;

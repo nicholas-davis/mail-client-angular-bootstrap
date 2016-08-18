@@ -992,6 +992,10 @@ body {
     border-radius: 0 !important;
 }
 
+.float-none {
+    float: none !important;
+}
+
 .bg-none {
     background: none !important;
 }
@@ -1262,7 +1266,9 @@ body {
 }
 
 .mail-content {
+
     .mail-header {
+
         .mail-header-subject {
             .mar-bottom-xs;
         }
@@ -1285,6 +1291,21 @@ body {
 
     .mail-message {
         background: #FFF;
+
+        .nav-pills-mail-actions {
+            .text-right;
+
+            > li {
+                .float-none;
+                display: inline-block;
+
+                > a {
+                    .list-group-mail-menu.list-group-item;
+                    .pad-left-xl;
+                    .pad-right-xl;
+                }
+            }
+        }
     }
 }
 
@@ -1299,6 +1320,14 @@ body {
 /*icon*/
 .icon {
     color: #8a8a8a;
+
+    &.icon-flipped {
+        transform: scaleX(-1);
+        -moz-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        -ms-transform: scaleX(-1);
+        display: inline-block;
+    }
 
     &.icon-1x {
         .icon-size(1em)
