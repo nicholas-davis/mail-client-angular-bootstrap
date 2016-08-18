@@ -9,7 +9,8 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'Us
             $scope.user = response.user[0];
             $scope.user = {
                 firstName: $scope.user.firstName,
-                lastName: $scope.user.lastName
+                lastName: $scope.user.lastName,
+                email: $scope.user.email
             }
         });
 
