@@ -3,7 +3,7 @@
     <div class="col-lg-12">
         <div class="mail-header">
             <h2 class="mail-header-subject">{{subject}}</h2>
-            <h6 class="mail-header-date"><time>{{date}}</time></h6>
+            <h6 class="mail-header-date"><time>{{date | moment:'MMMM Do YYYY, h:mm:ss a'}}</time></h6>
             <h5 class="mail-header-from">From {{fromEmail}}</h5>
             <h5 class="mail-header-to">To {{toEmail}}</h5>
         </div>
