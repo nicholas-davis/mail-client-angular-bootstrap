@@ -6,6 +6,7 @@ var mailClientApp = angular.module('mailClientApp', [
   'mailClientApp.sent',
   'mailClientApp.archive',
   'mailClientApp.trash',
+  'angularMoment',
   'ui.bootstrap',
   'ui.router'
 ]);
