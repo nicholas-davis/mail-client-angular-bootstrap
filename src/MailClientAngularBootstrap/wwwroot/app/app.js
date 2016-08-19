@@ -24,9 +24,6 @@ mailClientApp.run(['$rootScope', '$state', '$stateParams',
             $rootScope.previousStateURL = from.url;
             $rootScope.currentState = to.name;
             $rootScope.currentStateURL = to.url;
-            //console.log('Previous state:' + $rootScope.previousState)
-            //console.log(fromParams)
-            //console.log('Current state:' + $rootScope.currentState)
 
             //If modal is opened, discard modal when the user clicks on back btn
             //$uibModalStack.dismissAll('cancel');
