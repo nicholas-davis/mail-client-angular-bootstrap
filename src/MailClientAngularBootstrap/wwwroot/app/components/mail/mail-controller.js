@@ -4,7 +4,7 @@ var mailModule = angular.module('mailClientApp.mail', []);
 mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'UserService',
     function ($scope, $stateParams, $state, UserService) {
 
-        //User basic data
+        //User's basic data
         UserService.getUser().then(function (response) {
             $scope.user = response.user[0];
 
@@ -14,6 +14,11 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'Us
                 email: response.user[0].email
             }
 
+        });
+
+        //User's mail
+        $scope.$on("mail", function mailEvent(event, mail) {
+            $scope.mail = mail;
         });
 
     }

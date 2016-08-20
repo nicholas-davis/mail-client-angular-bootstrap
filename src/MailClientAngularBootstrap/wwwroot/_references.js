@@ -18,7 +18,6 @@
 /// <reference path="app/filters/index-filter.js" />
 /// <reference path="app/filters/moment-filter.js" />
 /// <reference path="app/services/utilities-service.js" />
-/// <reference path="app/shared/list-mail-items/list-mail-items-directive.js" />
 /// <reference path="assets/lib/angular/angular.js" />
 /// <reference path="assets/lib/angular-bootstrap/ui-bootstrap-tpls.js" />
 /// <reference path="assets/lib/angular-moment/angular-moment.js" />
