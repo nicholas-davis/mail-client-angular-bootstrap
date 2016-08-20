@@ -22,11 +22,7 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'Us
         });
 
         MailService.getMailConfig().then(function (response) {
-            $scope.inboxCount = response.inbox.length;
-            $scope.draftCount = response.draft.length;
-            $scope.sentCount = response.sent.length;
-            $scope.archiveCount = response.archive.length;
-            $scope.trashCount = response.trash.length;
+            $scope.inboxUnread = response.inbox.unread;
         });
     }
 ]);

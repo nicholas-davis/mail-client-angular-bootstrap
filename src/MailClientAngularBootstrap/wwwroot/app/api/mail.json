@@ -1,17 +1,23 @@
 {
   "inbox": {
-    "length": 13
+    "unread": 7,
+    "length": 194,
+    "last-refresh": "2016-08-20T03:47:49 +04:00"
   },
   "draft": {
-    "length": 3
+    "length": 3,
+    "last-refresh": "2016-08-20T03:47:49 +04:00"
   },
   "sent": {
-    "length": 35
+    "length": 35,
+    "last-refresh": "2016-08-20T03:47:49 +04:00"
   },
   "archive": {
-    "length": 0
+    "length": 0,
+    "last-refresh": "2016-08-20T03:47:49 +04:00"
   },
   "trash": {
-    "length": 73
+    "length": 73,
+    "last-refresh": "2016-08-20T03:47:49 +04:00"
   }
 }

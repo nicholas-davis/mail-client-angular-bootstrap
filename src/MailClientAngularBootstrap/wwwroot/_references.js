@@ -18,6 +18,10 @@
 /// <reference path="app/filters/index-filter.js" />
 /// <reference path="app/filters/moment-filter.js" />
 /// <reference path="app/services/utilities-service.js" />
+/// <reference path="app/shared/modal/modal-directive - copy.js" />
+/// <reference path="app/shared/modal/modal-directive.js" />
+/// <reference path="app/shared/modal-new-message/modal-new-message-controller.js" />
+/// <reference path="app/shared/modal-reply-message/modal-reply-message-controller.js" />
 /// <reference path="assets/lib/angular/angular.js" />
 /// <reference path="assets/lib/angular-bootstrap/ui-bootstrap-tpls.js" />
 /// <reference path="assets/lib/angular-moment/angular-moment.js" />

@@ -17,7 +17,7 @@
     <div class="list-group list-group-mail-menu">
         <a class="list-group-item" title="Inbox" ui-sref="Mail.Inbox" ui-sref-active="active">
             <span class="icon icon-2x ion-ios-email-outline"></span>
-            <span class="badge" ng-if="inboxCount">{{inboxCount}}</span>
+            <span class="badge" ng-if="inboxUnread">{{inboxUnread}}</span>
         </a>
         <a class="list-group-item" title="Draft" ui-sref="Mail.Draft" ui-sref-active="active">
             <span class="icon icon-2x ion-document"></span>
@@ -38,7 +38,7 @@
             <time class="list-group-item-date" datetime="{{mail.date | moment: 'MMMM Do YYYY, h:mm:ss a'}}}}">{{mail.date | moment:'MMMM Do YYYY, h:mm:ss a'}}</time>
             <ul class="list-group-item-actions list-unstyled list-inline">
                 <li role="presentation" ng-repeat="type in mail.type">
-                    <span class="icon icon-1-5x" ng-class="{'ion-ios-email' : (type | index: 'unread'), 'ion-ios-flag' : (type | index: 'flagged'), 'icon-flipped ion-reply' : (type | index: 'reply'), 'icon-flipped ion-reply-all' : (type | index: 'reply-all')}"></span>
+                    <span class="icon icon-1-5x" ng-class="{'ion-ios-email' : (type | index: 'unread'), 'ion-ios-flag' : (type | index: 'flagged'), 'icon-flipped ion-reply' : (type | index: 'reply'), 'icon-flipped ion-reply-all' : (type | index: 'reply-all'), 'ion-arrow-right-a' : (type | index: 'forward')}"></span>
                 </li>
             </ul>
             <p class="list-group-item-text">{{mail.message | ellipsis:'100'}}</p>
@@ -63,9 +63,7 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-nav-icons">
                             <li>
-                                <a href="#">
-                                    <span class="icon icon-2x ion-edit"></span>
-                                </a>
+                                <modal title="New Message" size="lg" template-url="app/shared/modal-new-message/modal-new-message-view.html" instance="modalNewMessageController" instance-data="null" css-clas="" btnIcon="" btn-action-text="Send" btn-cancel-text="Cancel"></modal>
                             </li>
                             <li>
                                 <a href="#">
