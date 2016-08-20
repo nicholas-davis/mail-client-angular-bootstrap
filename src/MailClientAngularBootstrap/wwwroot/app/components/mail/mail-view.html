@@ -17,6 +17,7 @@
     <div class="list-group list-group-mail-menu">
         <a class="list-group-item" title="Inbox" ui-sref="Mail.Inbox" ui-sref-active="active">
             <span class="icon icon-2x ion-ios-email-outline"></span>
+            <span class="badge" ng-if="inboxCount">{{inboxCount}}</span>
         </a>
         <a class="list-group-item" title="Draft" ui-sref="Mail.Draft" ui-sref-active="active">
             <span class="icon icon-2x ion-document"></span>

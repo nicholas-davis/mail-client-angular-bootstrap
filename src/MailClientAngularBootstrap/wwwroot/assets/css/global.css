@@ -10165,6 +10165,14 @@ div[ui-view],
 .list-group-mail-menu .list-group-item.active .icon {
   color: #125e85;
 }
+.list-group-mail-menu .list-group-item .badge {
+  top: 9px;
+  left: inherit;
+  bottom: inherit;
+  right: 2px;
+  position: absolute;
+  font-size: 85%;
+}
 /*inbox, draft, sent, archive, trash mail items*/
 .list-group-mail-items {
   margin-left: 50px;
@@ -10272,6 +10280,14 @@ div[ui-view],
 }
 .mail-content .mail-message .nav-pills-mail-actions > li > a.active .icon {
   color: #125e85;
+}
+.mail-content .mail-message .nav-pills-mail-actions > li > a .badge {
+  top: 9px;
+  left: inherit;
+  bottom: inherit;
+  right: 2px;
+  position: absolute;
+  font-size: 85%;
 }
 /*=================================================*/
 /*=================================================*/

@@ -8,5 +8,3 @@ mailModule.factory('UtilitiesService', ['$rootScope',
         };
     }
 ]);
-
-

@@ -1,0 +1,17 @@
+{
+  "inbox": {
+    "length": 13
+  },
+  "draft": {
+    "length": 3
+  },
+  "sent": {
+    "length": 35
+  },
+  "archive": {
+    "length": 0
+  },
+  "trash": {
+    "length": 73
+  }
+}
