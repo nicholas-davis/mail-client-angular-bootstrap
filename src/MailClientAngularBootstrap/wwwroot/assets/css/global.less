@@ -952,6 +952,10 @@
     font-size: @size;
 }
 
+.vertical-align(@postion) {
+    vertical-align: @postion;
+}
+
 /*=================================================*/
 //= Scaffolding
 /*=================================================*/
@@ -960,10 +964,9 @@ html, body, main, aside, div[ui-view] {
 }
 
 body {
-    padding-top: @navbar-height;
 
     main {
-        margin-left: 400px;
+        .scroll-y;
     }
 
     aside {
@@ -980,8 +983,13 @@ body {
         right: 0;
     }
 
+    main, .main-nav {
+        margin-left: 400px;
+    }
+
     main, aside {
-        .relative;
+        padding-top: @navbar-height;
+        position: fixed;
     }
 }
 
@@ -1090,7 +1098,6 @@ body {
     .mar-bottom-none;
     .border-none;
     .border-radius-none;
-    .absolute(-@navbar-height, 0, inherit, inherit);
 
     .navbar-brand { //navbar aside brand
         width: @navbar-height;
@@ -1212,9 +1219,10 @@ body {
     .list-group-item {
         color: inherit;
         background: none;
-        .border-radius-none;
+        padding-left: 35px;
         border-left: none;
         border-right: none;
+        .border-radius-none;
 
         &:hover {
             color: inherit;
@@ -1229,7 +1237,8 @@ body {
             .list-group-item-heading,
             .list-group-item-date,
             .list-group-item-actions,
-            .list-group-item-text {
+            .list-group-item-text,
+            .icon {
                 color: @brand-primary;
             }
         }
@@ -1249,12 +1258,15 @@ body {
         }
 
         .list-group-item-actions {
+            width: 20px;
             .mar-none;
+            .absolute(7px, 10px, inherit, inherit);
 
             li {
+                .pad-none;
 
-                &:first-child {
-                    .pad-left-none;
+                .icon {
+                    .vertical-align(top)
                 }
             }
         }
@@ -1331,6 +1343,10 @@ body {
 
     &.icon-1x {
         .icon-size(1em)
+    }
+
+    &.icon-1-5x {
+        .icon-size(1.5em)
     }
 
     &.icon-2x {

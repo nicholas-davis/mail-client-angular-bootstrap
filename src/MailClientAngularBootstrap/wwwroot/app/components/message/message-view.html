@@ -28,7 +28,8 @@
                         </li>
                         <li>
                             <a href="#">
-                                <span class="icon icon-2x ion-ios-flag-outline"></span>
+                                <span class="icon icon-2x {{(type | index: 'flagged') ? 'ion-ios-flag' : 'ion-ios-flag-outline'}}"></span>
+                                
                             </a>
                         </li>
                         <li>

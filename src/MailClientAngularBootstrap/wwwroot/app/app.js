@@ -59,7 +59,8 @@ mailClientApp.config(['$stateProvider', '$urlRouterProvider',
                 date: null,
                 tags: null,
             },
-            controller: function ($scope, $stateParams) {
+            controller: function ($scope, $stateParams, $filter) {
+                //State params
                 $scope.messageID = $stateParams.messageID;
                 $scope.guid = $stateParams.guid;
                 $scope.type = $stateParams.type;
@@ -73,7 +74,6 @@ mailClientApp.config(['$stateProvider', '$urlRouterProvider',
                 $scope.message = $stateParams.message;
                 $scope.date = $stateParams.date;
                 $scope.tags = $stateParams.tags;
-                console.log($stateParams)
             }
         }).state('Mail.Inbox', {
             url: '^/inbox',

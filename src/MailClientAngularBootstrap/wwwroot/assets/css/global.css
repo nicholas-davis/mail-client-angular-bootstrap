@@ -9686,11 +9686,8 @@ MIT License: https://github.com/driftyco/ionicons
 /*=================================================*/
 /*=================================================*/
 /*=================================================*/
-body {
-  padding-top: 50px;
-}
 body main {
-  margin-left: 400px;
+  overflow-y: auto;
 }
 body aside {
   width: 400px;
@@ -9705,8 +9702,13 @@ body footer {
   right: 0;
 }
 body main,
+body .main-nav {
+  margin-left: 400px;
+}
+body main,
 body aside {
-  position: relative;
+  padding-top: 50px;
+  position: fixed;
 }
 /*=================================================*/
 /* =Reset
@@ -10077,11 +10079,6 @@ div[ui-view],
   margin-bottom: 0 !important;
   border: none !important;
   border-radius: 0 !important;
-  top: -50px;
-  left: 0;
-  bottom: inherit;
-  right: inherit;
-  position: absolute;
 }
 .navbar .navbar-brand {
   width: 50px;
@@ -10179,9 +10176,10 @@ div[ui-view],
 .list-group-mail-items .list-group-item {
   color: inherit;
   background: none;
-  border-radius: 0 !important;
+  padding-left: 35px;
   border-left: none;
   border-right: none;
+  border-radius: 0 !important;
 }
 .list-group-mail-items .list-group-item:hover {
   color: inherit;
@@ -10199,7 +10197,9 @@ div[ui-view],
 .list-group-mail-items .list-group-item.active .list-group-item-actions,
 .list-group-mail-items .list-group-item:focus .list-group-item-actions,
 .list-group-mail-items .list-group-item.active .list-group-item-text,
-.list-group-mail-items .list-group-item:focus .list-group-item-text {
+.list-group-mail-items .list-group-item:focus .list-group-item-text,
+.list-group-mail-items .list-group-item.active .icon,
+.list-group-mail-items .list-group-item:focus .icon {
   color: #125e85;
 }
 .list-group-mail-items .list-group-item:first-child {
@@ -10214,10 +10214,19 @@ div[ui-view],
   margin-top: 0 !important;
 }
 .list-group-mail-items .list-group-item .list-group-item-actions {
+  width: 20px;
   margin: 0 !important;
+  top: 7px;
+  left: 10px;
+  bottom: inherit;
+  right: inherit;
+  position: absolute;
 }
-.list-group-mail-items .list-group-item .list-group-item-actions li:first-child {
-  padding-left: 0 !important;
+.list-group-mail-items .list-group-item .list-group-item-actions li {
+  padding: 0 !important;
+}
+.list-group-mail-items .list-group-item .list-group-item-actions li .icon {
+  vertical-align: top;
 }
 .list-group-mail-items .list-group-item .list-group-item-text {
   font-size: 12px;
@@ -10281,6 +10290,9 @@ div[ui-view],
 }
 .icon.icon-1x {
   font-size: 1em;
+}
+.icon.icon-1-5x {
+  font-size: 1.5em;
 }
 .icon.icon-2x {
   font-size: 2em;

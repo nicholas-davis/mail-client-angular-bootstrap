@@ -1,8 +1,8 @@
 ﻿//MomentFilter
 mailModule.filter('moment', [
     function () {
-        return function (dateString, format) {
-            return moment(dateString).format(format);
+        return function (date, format) {
+            return moment(date).format(format);
         };
     }
 ]);

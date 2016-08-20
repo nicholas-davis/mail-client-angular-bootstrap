@@ -1,16 +1,10 @@
 ﻿<div class="list-group list-group-mail-items">
-    <a href="#" ui-sref="Mail.Message({ messageID: mail.id, guid: mail.guid, type: mail.type, fromFirstName: mail.from.firstName, fromLastName: mail.from.lastName, fromEmail: mail.from.email, toFirstName: mail.to.firstName, toLastName: mail.to.lastName, toEmail: mail.to.email, subject: mail.subject, message: mail.message, date: mail.date, tags: mail.tags })" class="list-group-item" ng-repeat="mail in vm.mail.messages track by $index">
+    <a href="#" ui-sref="Mail.Message({ messageID: mail.id, guid: mail.guid, type: mail.type, fromFirstName: mail.from.firstName, fromLastName: mail.from.lastName, fromEmail: mail.from.email, toFirstName: mail.to.firstName, toLastName: mail.to.lastName, toEmail: mail.to.email, subject: mail.subject, message: mail.message, date: mail.date, tags: mail.tags })" class="list-group-item" ng-repeat="mail in vm.mail.messages | orderBy: '-date' track by $index">
         <h5 class="list-group-item-heading">{{mail.subject}}</h5>
-        <time class="list-group-item-date" datetime="{{mail.date | moment:'MMMM Do YYYY, h:mm:ss a'}}}}">{{mail.date | moment:'MMMM Do YYYY, h:mm:ss a'}}</time>
+        <time class="list-group-item-date" datetime="{{mail.date | moment: 'MMMM Do YYYY, h:mm:ss a'}}}}">{{mail.date | moment:'MMMM Do YYYY, h:mm:ss a'}}</time>
         <ul class="list-group-item-actions list-unstyled list-inline">
-            <li role="presentation">
-                <span>icon</span>
-            </li>
-            <li role="presentation">
-                <span>icon</span>
-            </li>
-            <li role="presentation">
-                <span>icon</span>
+            <li role="presentation" ng-repeat="type in mail.type">
+                <span class="icon icon-1-5x" ng-class="{'ion-ios-email' : (type | index: 'unread'), 'ion-ios-flag' : (type | index: 'flagged'), 'icon-flipped ion-reply' : (type | index: 'reply'), 'icon-flipped ion-reply-all' : (type | index: 'reply-all')}"></span>
             </li>
         </ul>
         <p class="list-group-item-text">{{mail.message | ellipsis:'100'}}</p>

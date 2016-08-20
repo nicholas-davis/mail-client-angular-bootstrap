@@ -4,7 +4,8 @@
       "id": "57b0f3dfcc4f7e17db2726b6",
       "guid": "3282c26d-f0ff-4685-8c00-052407c7c684",
       "type": [
-        "unread"
+        "unread",
+        "flagged"
       ],
       "from": {
         "firstName": "Lorna",
@@ -32,9 +33,7 @@
     {
       "id": "57b0f3df8ea10c5044a1e7bd",
       "guid": "1fee914a-cf53-4df9-9463-e74bf4fb184a",
-      "type": [
-        "unread"
-      ],
+      "type": [],
       "from": {
         "firstName": "Christensen",
         "lastName": "Estrada",
@@ -236,7 +235,7 @@
       "id": "57b0f3dfa4881de4b6aba216",
       "guid": "f9efdd5e-da8c-480f-a383-e3c66d34a417",
       "type": [
-        "unread"
+        "reply"
       ],
       "from": {
         "firstName": "Ferrell",
@@ -294,7 +293,7 @@
       "id": "57b0f3df41c27992ada24751",
       "guid": "d48dc16d-5630-457d-aaa7-ce3a0b162c68",
       "type": [
-        "unread"
+        "reply-all"
       ],
       "from": {
         "firstName": "Padilla",

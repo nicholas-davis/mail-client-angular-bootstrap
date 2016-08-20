@@ -14,8 +14,9 @@
 /// <reference path="app/components/trash/trash-controller.js" />
 /// <reference path="app/components/trash/trash-service.js" />
 /// <reference path="app/components/user/user-service.js" />
-/// <reference path="app/filters/moment-filter - copy.js" />
-/// <reference path="app/filters/utilities-service.js" />
+/// <reference path="app/filters/ellipsis -filter.js" />
+/// <reference path="app/filters/index-filter.js" />
+/// <reference path="app/filters/moment-filter.js" />
 /// <reference path="app/services/utilities-service.js" />
 /// <reference path="app/shared/list-mail-items/list-mail-items-directive.js" />
 /// <reference path="assets/lib/angular/angular.js" />
