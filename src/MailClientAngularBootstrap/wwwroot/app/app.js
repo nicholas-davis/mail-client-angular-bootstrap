@@ -61,19 +61,25 @@ mailClientApp.config(['$stateProvider', '$urlRouterProvider',
             },
             controller: function ($scope, $stateParams, $filter) {
                 //State params
-                $scope.messageID = $stateParams.messageID;
-                $scope.guid = $stateParams.guid;
-                $scope.type = $stateParams.type;
-                $scope.fromFirstName = $stateParams.fromFirstName;
-                $scope.fromLastName = $stateParams.fromLastName;
-                $scope.fromEmail = $stateParams.fromEmail;
-                $scope.toFirstName = $stateParams.toFirstName;
-                $scope.toLastName = $stateParams.toLastName;
-                $scope.toEmail = $stateParams.toEmail;
-                $scope.subject = $stateParams.subject;
-                $scope.message = $stateParams.message;
-                $scope.date = $stateParams.date;
-                $scope.tags = $stateParams.tags;
+                $scope.vmMessage = {
+                    "messageID": $stateParams.messageID,
+                    "guid": $stateParams.guid,
+                    "type": $stateParams.type,
+                    "from": {
+                        "firstName": $stateParams.fromFirstName,
+                        "lastName": $stateParams.fromLastName,
+                        "email": $stateParams.fromEmail
+                    },
+                    "to": {
+                        "firstName": $stateParams.toFirstName,
+                        "lastName": $stateParams.toLastName,
+                        "email": $stateParams.toEmail
+                    },
+                    "subject": $stateParams.subject,
+                    "message": $stateParams.message,
+                    "date": $stateParams.date,
+                    "tags": $stateParams.tags
+                }
             }
         }).state('Mail.Inbox', {
             url: '^/inbox',
