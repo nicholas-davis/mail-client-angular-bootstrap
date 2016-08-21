@@ -8,19 +8,23 @@
     <form>
         <div class="form-group">
             <label for="messageTo" class="sr-only">To</label>
-            <input type="text" class="form-control" id="messageTo" placeholder="To">
+            <input type="text" class="form-control" id="messageTo" placeholder="To" value="{{modal.instanceData.from.email}}">
         </div>
         <div class="form-group">
             <label for="messageFrom" class="sr-only">From</label>
-            <input type="text" class="form-control" id="messageFrom" placeholder="From">
+            <input type="text" class="form-control" id="messageFrom" placeholder="From" value="{{modal.instanceData.to.email}}">
         </div>
         <div class="form-group">
             <label for="messageSubject" class="sr-only">From</label>
-            <input type="text" class="form-control" id="toEmail" placeholder="Subject">
+            <input type="text" class="form-control" id="toEmail" placeholder="Subject" value="Re: {{modal.instanceData.subject}}">
         </div>
         <div class="form-group">
             <label for="messageEmail" class="sr-only">Message</label>
-            <textarea id="messageEmail" class="form-control" rows="6"></textarea>
+            <div id="messageEmail" class="form-control" contenteditable="true">
+                <br />
+                <hr />
+                {{modal.instanceData.message}}
+            </div>
         </div>
     </form>
 </div>
