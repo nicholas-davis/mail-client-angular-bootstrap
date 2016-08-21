@@ -24,5 +24,10 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'Us
         MailService.getMailConfig().then(function (response) {
             $scope.inboxUnread = response.inbox.unread;
         });
+
+        //Toggle css class
+        $scope.selectMessageItem = function (mail) {
+            $scope.selectedMessageItem = mail;
+        };
     }
 ]);
