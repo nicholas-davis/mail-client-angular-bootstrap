@@ -7,7 +7,8 @@
     "angular-ui-router": "^0.3.1",
     "bootstrap": "^3.3.7",
     "moment": "^2.14.1",
-    "angular-moment": "^0.10.3"
+    "angular-moment": "^0.10.3",
+    "angular-ui-tinymce": "^0.0.16"
   },
   "resolutions": {
     "angular": "1.5.8"
@@ -31,5 +32,6 @@
     "wwwroot/assets/lib",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {}
 }
