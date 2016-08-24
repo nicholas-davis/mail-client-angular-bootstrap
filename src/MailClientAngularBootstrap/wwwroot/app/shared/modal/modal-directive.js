@@ -6,7 +6,7 @@ mailModule.directive('modal', ['$uibModal',
             scope: {},
             templateUrl: 'app/shared/modal/modal-view.html', //display btn
             controller: 'modalController', //Only for btn, not modal instance
-            controllerAs: 'vm',
+            controllerAs: 'vmModal',
             bindToController: {
                 title: '@', //modal title
                 size: '@', //modal size
@@ -25,16 +25,16 @@ mailModule.directive('modal', ['$uibModal',
                 //trigger modal
                 scope.showModal = function () {
                     modalInstance = $uibModal.open({
-                        templateUrl: scope.vm.templateUrl, //display modal
-                        size: scope.vm.size, //config modal size ie. sm, md and lg
-                        controller: scope.vm.instance, // attach controller to given page controller 
+                        templateUrl: scope.vmModal.templateUrl, //display modal
+                        size: scope.vmModal.size, //config modal size ie. sm, md and lg
+                        controller: scope.vmModal.instance, // attach controller to given page controller 
                         backdrop: 'static',
                         resolve: {
                             modalConfig: {
-                                title: scope.vm.title,
-                                instanceData: scope.vm.instanceData,
-                                btnActionText: scope.vm.btnActionText,
-                                btnCancelText: scope.vm.btnCancelText
+                                title: scope.vmModal.title,
+                                instanceData: scope.vmModal.instanceData,
+                                btnActionText: scope.vmModal.btnActionText,
+                                btnCancelText: scope.vmModal.btnCancelText
                             }
                         }
                     });
