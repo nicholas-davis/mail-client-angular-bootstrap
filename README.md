@@ -8,6 +8,7 @@ This application is for demonstration purposes only.
 - Bootstrap v3.3.7
 - Moment v2.14.1
 - Ionicons v2.0.1
+- Loader.css v0.2.1
 - Bower
 - Gulp
 

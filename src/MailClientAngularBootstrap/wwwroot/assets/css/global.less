@@ -937,6 +937,11 @@
 // --------------------------------------------------
 @import "../lib/ionicons/less/ionicons";
 
+//
+// Loaders
+// --------------------------------------------------
+@import "../lib/loaders.css/loaders.css";
+
 /*=================================================*/
 /* =Mixins
 /*=================================================*/
@@ -977,7 +982,7 @@ body {
     footer {
         background: red;
         width: 300px;
-         margin-bottom: 287px; 
+        margin-bottom: 287px;
         position: absolute;
         bottom: 0;
         right: 0;
@@ -1357,6 +1362,7 @@ body {
     .modal-body {
     }
 }
+
 /*icon*/
 .icon {
     color: #8a8a8a;
@@ -1395,5 +1401,14 @@ body {
 
     &.icon-6x {
         .icon-size(6em)
+    }
+}
+
+/*loader*/
+.loader {
+    .absolute(50%, 50%, 0, 0);
+
+    .ball-scale-multiple > div {
+        background: @brand-info;
     }
 }
