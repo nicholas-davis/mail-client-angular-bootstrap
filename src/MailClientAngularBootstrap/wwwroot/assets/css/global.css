@@ -9696,7 +9696,7 @@ body aside {
 body footer {
   background: red;
   width: 300px;
-  /* margin-bottom: 287px; */
+  margin-bottom: 287px;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -10132,11 +10132,14 @@ div[ui-view],
   -moz-box-shadow: none !important;
   box-shadow: none !important;
 }
-.navbar .navbar-nav-icons li a {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
+.navbar .navbar-nav-icons li a,
+.navbar .navbar-nav-icons li a .navbar-nav-icon-link {
+  line-height: 20px;
+  display: block;
+  padding: 10px !important;
 }
-.navbar .navbar-nav-icons li a .icon {
+.navbar .navbar-nav-icons li a .icon,
+.navbar .navbar-nav-icons li a .navbar-nav-icon-link .icon {
   color: #125e85;
 }
 /*=================================================*/
@@ -10258,11 +10261,12 @@ div[ui-view],
 .mail-content .mail-message .nav-pills-mail-actions {
   text-align: right;
 }
-.mail-content .mail-message .nav-pills-mail-actions > li {
+.mail-content .mail-message .nav-pills-mail-actions li {
   float: none !important;
   display: inline-block;
 }
-.mail-content .mail-message .nav-pills-mail-actions > li > a {
+.mail-content .mail-message .nav-pills-mail-actions li a,
+.mail-content .mail-message .nav-pills-mail-actions li a.nav-pills-mail-actions-link {
   color: inherit;
   background: none;
   border: none !important;
@@ -10271,17 +10275,22 @@ div[ui-view],
   padding-left: 15px !important;
   padding-right: 15px !important;
 }
-.mail-content .mail-message .nav-pills-mail-actions > li > a:hover .icon,
-.mail-content .mail-message .nav-pills-mail-actions > li > a:focus .icon {
+.mail-content .mail-message .nav-pills-mail-actions li a:hover .icon,
+.mail-content .mail-message .nav-pills-mail-actions li a.nav-pills-mail-actions-link:hover .icon,
+.mail-content .mail-message .nav-pills-mail-actions li a:focus .icon,
+.mail-content .mail-message .nav-pills-mail-actions li a.nav-pills-mail-actions-link:focus .icon {
   color: #4d4d4d;
 }
-.mail-content .mail-message .nav-pills-mail-actions > li > a.active {
+.mail-content .mail-message .nav-pills-mail-actions li a.active,
+.mail-content .mail-message .nav-pills-mail-actions li a.nav-pills-mail-actions-link.active {
   background: #ebebeb;
 }
-.mail-content .mail-message .nav-pills-mail-actions > li > a.active .icon {
+.mail-content .mail-message .nav-pills-mail-actions li a.active .icon,
+.mail-content .mail-message .nav-pills-mail-actions li a.nav-pills-mail-actions-link.active .icon {
   color: #125e85;
 }
-.mail-content .mail-message .nav-pills-mail-actions > li > a .badge {
+.mail-content .mail-message .nav-pills-mail-actions li a .badge,
+.mail-content .mail-message .nav-pills-mail-actions li a.nav-pills-mail-actions-link .badge {
   top: 9px;
   left: inherit;
   bottom: inherit;

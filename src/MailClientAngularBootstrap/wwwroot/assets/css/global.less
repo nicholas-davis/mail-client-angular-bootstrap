@@ -977,7 +977,7 @@ body {
     footer {
         background: red;
         width: 300px;
-        /* margin-bottom: 287px; */
+         margin-bottom: 287px; 
         position: absolute;
         bottom: 0;
         right: 0;
@@ -1158,11 +1158,17 @@ body {
         li {
 
             a {
-                .pad-top-lg;
-                .pad-bottom-lg;
 
-                .icon {
-                    color: @brand-primary;
+                &,
+                .navbar-nav-icon-link {
+                    line-height: 20px;
+                    display: block;
+                    .pad-lg;
+
+
+                    .icon {
+                        color: @brand-primary;
+                    }
                 }
             }
         }
@@ -1312,14 +1318,18 @@ body {
         .nav-pills-mail-actions {
             .text-right;
 
-            > li {
+            li {
                 .float-none;
                 display: inline-block;
 
-                > a {
-                    .list-group-mail-menu.list-group-item;
-                    .pad-left-xl;
-                    .pad-right-xl;
+                a {
+
+                    &,
+                    &.nav-pills-mail-actions-link {
+                        .list-group-mail-menu.list-group-item;
+                        .pad-left-xl;
+                        .pad-right-xl;
+                    }
                 }
             }
         }
@@ -1342,6 +1352,9 @@ body {
         .close {
             .pad-md;
         }
+    }
+
+    .modal-body {
     }
 }
 /*icon*/
