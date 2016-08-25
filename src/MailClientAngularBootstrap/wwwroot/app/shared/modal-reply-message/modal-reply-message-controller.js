@@ -1,8 +1,11 @@
 ﻿//ModalReplyMessageController
-mailModule.controller('modalReplyMessageController', ['$scope', '$uibModalInstance', 'modalConfig',
-    function ($scope, $uibModalInstance, modalConfig) {
+mailModule.controller('modalReplyMessageController', ['$scope', '$timeout', '$uibModalInstance', 'modalConfig',
+    function ($scope, $timeout, $uibModalInstance, modalConfig) {
         console.log('$uibModalInstance', $uibModalInstance)
         console.log('modalConfig', modalConfig)
+
+
+        $scope.isLoading = true;
 
         //Modal configuration
         $scope.modal = {
@@ -11,11 +14,18 @@ mailModule.controller('modalReplyMessageController', ['$scope', '$uibModalInstan
             btnActionText: modalConfig.btnActionText,
             btnCancelText: modalConfig.btnCancelText,
             action: function () {
-                
+
             },
             cancel: function () {
                 $uibModalInstance.dismiss('cancel');
             }
         };
+
+        $uibModalInstance.rendered.then(function () {
+            $timeout(function () {
+                $scope.isLoading = false;
+            }, 5000000);
+        });
+
     }
 ]);
