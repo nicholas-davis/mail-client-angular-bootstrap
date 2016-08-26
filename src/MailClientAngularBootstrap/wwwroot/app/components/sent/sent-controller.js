@@ -1,5 +1,5 @@
 ﻿//SentController
-var sentModule = angular.module('mailClientApp.sent', []);
+var sentModule = angular.module('mailClientApp.sent', ['ui.tinymce']);
 
 sentModule.controller('SentController', ['$rootScope', '$scope', '$stateParams', '$state', 'UtilitiesService', 'SentService', '$timeout',
     function ($rootScope, $scope, $stateParams, $state, UtilitiesService, SentService, $timeout) {

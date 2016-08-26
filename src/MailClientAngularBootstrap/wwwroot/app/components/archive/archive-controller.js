@@ -1,5 +1,5 @@
 ﻿//ArchiveController
-var archiveModule = angular.module('mailClientApp.archive', []);
+var archiveModule = angular.module('mailClientApp.archive', ['ui.tinymce']);
 
 archiveModule.controller('ArchiveController', ['$rootScope', '$scope', '$stateParams', '$state', 'UtilitiesService', 'ArchiveService', '$timeout',
     function ($rootScope, $scope, $stateParams, $state, UtilitiesService, ArchiveService, $timeout) {

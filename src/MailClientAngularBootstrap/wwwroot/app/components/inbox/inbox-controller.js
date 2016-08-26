@@ -1,5 +1,5 @@
 ﻿//InboxController
-var inboxModule = angular.module('mailClientApp.inbox', []);
+var inboxModule = angular.module('mailClientApp.inbox', ['ui.tinymce']);
 
 inboxModule.controller('InboxController', ['$rootScope', '$scope', '$stateParams', '$state', 'UtilitiesService', 'InboxService', '$timeout',
     function ($rootScope, $scope, $stateParams, $state, UtilitiesService, InboxService, $timeout) {

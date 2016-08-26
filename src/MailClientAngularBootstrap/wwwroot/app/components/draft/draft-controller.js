@@ -1,5 +1,5 @@
 ﻿//DraftController
-var draftModule = angular.module('mailClientApp.draft', []);
+var draftModule = angular.module('mailClientApp.draft', ['ui.tinymce']);
 
 draftModule.controller('DraftController', ['$rootScope', '$scope', '$stateParams', '$state', 'UtilitiesService', 'DraftService', '$timeout',
     function ($rootScope, $scope, $stateParams, $state, UtilitiesService, DraftService, $timeout) {
