@@ -9740,17 +9740,6 @@ body aside {
 .relative {
   position: relative;
 }
-.absolute-center {
-  width: 50%;
-  height: 50%;
-  overflow: auto;
-  margin: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-}
 .absolute-full-height {
   height: 100%;
   overflow-y: auto;
@@ -10137,7 +10126,10 @@ div[ui-view],
 .navbar .navbar-nav-icons li a .navbar-nav-icon-link {
   line-height: 20px;
   display: block;
-  padding: 10px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
 .navbar .navbar-nav-icons li a .icon,
 .navbar .navbar-nav-icons li a .navbar-nav-icon-link .icon {
@@ -10303,6 +10295,20 @@ div[ui-view],
 /*=================================================*/
 /*=================================================*/
 /*=================================================*/
+/*alert*/
+.alert {
+  z-index: 1050;
+  text-align: center;
+  width: 400px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  top: -5px;
+  left: 0;
+  bottom: inherit;
+  right: 0;
+  position: absolute;
+}
 /*modal*/
 .modal .modal-header .close {
   padding: 8px !important;

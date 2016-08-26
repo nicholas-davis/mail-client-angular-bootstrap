@@ -1,6 +1,6 @@
 ﻿//ModalNewMessageController
-mailModule.controller('modalNewMessageController', ['$scope', '$timeout', '$uibModalInstance', 'modalConfig',
-    function ($scope, $timeout, $uibModalInstance, modalConfig) {
+mailModule.controller('modalNewMessageController', ['$scope', '$timeout', '$uibModalInstance', 'modalConfig', 'AlertService',
+    function ($scope, $timeout, $uibModalInstance, modalConfig, AlertService) {
 
         //Modal configuration
         $scope.modal = {
@@ -10,7 +10,7 @@ mailModule.controller('modalNewMessageController', ['$scope', '$timeout', '$uibM
             btnActionText: modalConfig.btnActionText,
             btnCancelText: modalConfig.btnCancelText,
             action: function () {
-                
+                AlertService.alerts.add('success', 'hello', 2000)
             },
             cancel: function () {
                 $uibModalInstance.dismiss('cancel');

@@ -1,8 +1,8 @@
 ﻿//MailController
 var mailModule = angular.module('mailClientApp.mail', []);
 
-mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'UserService', 'MailService',
-    function ($scope, $stateParams, $state, UserService, MailService) {
+mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'UserService', 'MailService', 'AlertService',
+    function ($scope, $stateParams, $state, UserService, MailService, AlertService) {
 
         //User's basic data
         UserService.getUser().then(function (response) {
@@ -29,5 +29,6 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'Us
         $scope.selectMessageItem = function (mail) {
             $scope.selectedMessageItem = mail;
         };
+
     }
 ]);

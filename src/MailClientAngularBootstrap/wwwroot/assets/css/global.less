@@ -953,6 +953,14 @@
     position: absolute;
 }
 
+.absolute-center(@width, @height, @top, @left, @bottom, @right) {
+    width: @width;
+    height: @height;
+    margin-left: auto;
+    margin-right: auto;
+    .absolute(@top, @left, @bottom, @right);
+}
+
 .icon-size(@size) {
     font-size: @size;
 }
@@ -1031,14 +1039,6 @@ body {
 /*=================================================*/
 .relative {
     position: relative;
-}
-
-.absolute-center {
-    width: 50%;
-    height: 50%;
-    overflow: auto;
-    margin: auto;
-    .absolute(0, 0, 0, 0);
 }
 
 .absolute-full-height {
@@ -1168,7 +1168,10 @@ body {
                 .navbar-nav-icon-link {
                     line-height: 20px;
                     display: block;
-                    .pad-lg;
+                    .pad-left-xl;
+                    .pad-right-xl;
+                    .pad-top-lg;
+                    .pad-bottom-lg;
 
 
                     .icon {
@@ -1348,6 +1351,12 @@ body {
 /*=================================================*/
 //= Miscellaneous/Extras
 /*=================================================*/
+/*alert*/
+.alert {
+    z-index: @zindex-modal;
+    .text-center;
+    .absolute-center(400px, auto, -5px, 0, inherit, 0);
+}
 
 /*modal*/
 .modal {

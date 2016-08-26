@@ -1,2 +1,2 @@
 ﻿<!-- shared/AlertView -->
-<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.message}}</uib-alert>
+<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" dismiss-on-timeout="{{alert.dismissal}}" close="closeAlert($index)">{{alert.message}}</uib-alert>
