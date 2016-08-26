@@ -24,9 +24,8 @@
             <label for="messageEmail" class="sr-only">Message</label>
             <textarea id="messageEmail" class="form-control" rows="6"></textarea>
         </div>-->
-        <textarea ui-tinymce="tinymceOptions" ng-model="tinymceModel"></textarea>
-        <button ng-click="getContent()">Get content</button>
-        <button ng-click="setContent()">Set content</button>
+        <trix-editor></trix-editor>
+
     </form>
 </div>
 <div class="modal-footer" ng-if="!isLoading">

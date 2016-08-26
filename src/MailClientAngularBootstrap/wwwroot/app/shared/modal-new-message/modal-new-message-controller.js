@@ -21,7 +21,8 @@ mailModule.controller('modalNewMessageController', ['$scope', '$timeout', '$uibM
         $uibModalInstance.rendered.then(function () {
             $timeout(function () {
                 $scope.isLoading = false;
-            }, 1000);
+            }, 500);
         });
+
     }
 ]);

@@ -9,7 +9,7 @@ var mailClientApp = angular.module('mailClientApp', [
   'angularMoment',
   'ui.bootstrap',
   'ui.router',
-  'ui.tinymce'
+  'angularTrix'
 ]);
 
 mailClientApp.run(['$rootScope', '$state', '$stateParams',
