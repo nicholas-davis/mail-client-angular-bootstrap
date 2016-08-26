@@ -17,7 +17,10 @@
 /// <reference path="app/filters/ellipsis-filter.js" />
 /// <reference path="app/filters/index-filter.js" />
 /// <reference path="app/filters/moment-filter.js" />
+/// <reference path="app/services/utilities-service - copy.js" />
 /// <reference path="app/services/utilities-service.js" />
+/// <reference path="app/shared/alert/notification-component.js" />
+/// <reference path="app/shared/alert/notification-controller.js" />
 /// <reference path="app/shared/loader/loader-component.js" />
 /// <reference path="app/shared/loader/loader-controller.js" />
 /// <reference path="app/shared/modal/modal-controller.js" />

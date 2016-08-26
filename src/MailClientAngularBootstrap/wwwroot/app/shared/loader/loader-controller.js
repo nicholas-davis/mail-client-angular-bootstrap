@@ -1,4 +1,4 @@
-﻿//ModalController
+﻿//LoaderController
 mailModule.controller('loaderController', ['$scope', '$timeout',
     function ($scope, $timeout) {
 
