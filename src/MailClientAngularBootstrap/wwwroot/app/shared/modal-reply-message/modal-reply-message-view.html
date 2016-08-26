@@ -1,14 +1,13 @@
-﻿<div class="modal-header" ng-if="!isLoading">
+﻿<!-- shared/ModalReplyMessageView -->
+<div class="modal-header" ng-if="!isLoading">
     <button type="button" class="close" aria-label="Close" ng-click="modal.cancel()">
         <span aria-hidden="true">×</span>
     </button>
     <h3 class="modal-title">{{modal.title}}</h3>
 </div>
-<div class="modal-body" ng-if="isLoading">
-    <loader></loader>
-</div>
-<div class="modal-body" ng-if="!isLoading">
-    <form>
+<div class="modal-body">
+    <loader text="modal.loadingText" ng-if="isLoading"></loader>
+    <form ng-if="!isLoading">
         <div class="form-group">
             <label for="messageTo" class="sr-only">To</label>
             <input type="text" class="form-control" id="messageTo" placeholder="To" value="{{modal.instanceData.from.email}}">
@@ -31,8 +30,6 @@
         </div>-->
         <textarea ui-tinymce="tinymceOptions" ng-model="tinymceModel"></textarea>
         <button ng-click="getContent()">Get content</button>
-        bu
-        cl
         <button ng-click="setContent()">Set content</button>
     </form>
 </div>

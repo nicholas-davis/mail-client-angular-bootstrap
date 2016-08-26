@@ -1,14 +1,10 @@
 ﻿//ModalReplyMessageController
 mailModule.controller('modalReplyMessageController', ['$scope', '$timeout', '$uibModalInstance', 'modalConfig',
     function ($scope, $timeout, $uibModalInstance, modalConfig) {
-        console.log('$uibModalInstance', $uibModalInstance)
-        console.log('modalConfig', modalConfig)
-
-
-        $scope.isLoading = true;
 
         //Modal configuration
         $scope.modal = {
+            loadingText: 'Loading ' + modalConfig.title + '...',
             title: modalConfig.title,
             instanceData: modalConfig.instanceData,
             btnActionText: modalConfig.btnActionText,
@@ -21,10 +17,11 @@ mailModule.controller('modalReplyMessageController', ['$scope', '$timeout', '$ui
             }
         };
 
+        $scope.isLoading = true;
         $uibModalInstance.rendered.then(function () {
             $timeout(function () {
                 $scope.isLoading = false;
-            }, 5000000);
+            }, 1000);
         });
 
     }

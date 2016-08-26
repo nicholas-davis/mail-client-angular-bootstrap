@@ -10341,12 +10341,27 @@ div[ui-view],
 }
 /*loader*/
 .loader {
-  top: 50%;
-  left: 50%;
-  bottom: 0;
-  right: 0;
-  position: absolute;
+  margin-top: 40px;
+  box-sizing: border-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -ms-flex-preferred-size: 25%;
+  flex-basis: 25%;
+  max-width: 100%;
+  height: 75px;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
-.loader .ball-scale-multiple > div {
+.loader .loader-inner.ball-scale-multiple > div {
   background: #5bc0de;
 }
