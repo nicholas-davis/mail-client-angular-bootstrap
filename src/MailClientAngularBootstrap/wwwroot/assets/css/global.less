@@ -982,7 +982,7 @@ body {
         .scroll-y;
     }
 
-    aside {
+    aside, .aside-nav {
         width: 400px;
         .pull-left;
     }
@@ -1002,7 +1002,7 @@ body {
 
     main, aside {
         padding-top: @navbar-height;
-        position: fixed;
+        position: relative;
     }
 }
 
@@ -1297,6 +1297,22 @@ body {
 }
 
 .mail-content {
+    .mail-icon {
+        .absolute-center(50%, auto, 0, 0, inherit, 0);
+        .text-center;
+
+        &,
+        .icon {
+            color: darken(@navbar-default-bg, 15%);
+
+            &:before {
+                vertical-align: bottom;
+            }
+        }
+
+        .mail-icon-text {
+        }
+    }
 
     .mail-header {
 
@@ -1411,6 +1427,10 @@ body {
     &.icon-6x {
         .icon-size(6em)
     }
+
+    &.icon-10x {
+        .icon-size(10em)
+    }
 }
 
 /*loader*/
@@ -1437,7 +1457,6 @@ body {
     justify-content: center;
 
     .loader-inner {
-        //.absolute(50%, 50%, 0, 0);
         &.ball-scale-multiple > div {
             background: @brand-info;
         }

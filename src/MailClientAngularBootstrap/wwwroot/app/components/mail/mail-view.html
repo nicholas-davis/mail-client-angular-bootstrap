@@ -2,7 +2,7 @@
 <alert></alert>
 <!--Side Menu-->
 <aside role="complementary">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top aside-nav">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">@<span class="navbar-brand-text">Mail Client</span></a>
         </div>
@@ -34,7 +34,8 @@
         </a>
     </div>
     <div class="list-group list-group-mail-items">
-        <a id="{{mail.id}}" href="#" ui-sref="Mail.Message({ messageID: mail.id, guid: mail.guid, type: mail.type, fromFirstName: mail.from.firstName, fromLastName: mail.from.lastName, fromEmail: mail.from.email, toFirstName: mail.to.firstName, toLastName: mail.to.lastName, toEmail: mail.to.email, subject: mail.subject, message: mail.message, date: mail.date, tags: mail.tags })" class="list-group-item" ng-class="{'active': selectedMessageItem === mail.id}" ng-click="selectMessageItem( mail.id )" ng-repeat="mail in mail.messages | filter: searchMessages | orderBy: '-date' as searchMessagesResults track by $index">
+        <loader text="modal.loadingText" ng-if="isLoading"></loader>
+        <a id="{{mail.id}}" href="#" ui-sref="Mail.Message({ messageID: mail.id, guid: mail.guid, type: mail.type, fromFirstName: mail.from.firstName, fromLastName: mail.from.lastName, fromEmail: mail.from.email, toFirstName: mail.to.firstName, toLastName: mail.to.lastName, toEmail: mail.to.email, subject: mail.subject, message: mail.message, date: mail.date, tags: mail.tags })" class="list-group-item" ng-class="{'active': selectedMessageItem === mail.id}" ng-click="selectMessageItem( mail.id )" ng-repeat="mail in mail.messages | filter: searchMessages | orderBy: '-date' as searchMessagesResults track by $index" ng-if="!isLoading">
             <h5 class="list-group-item-heading">{{mail.subject}}</h5>
             <time class="list-group-item-date" datetime="{{mail.date | moment: 'MMMM Do YYYY, h:mm:ss a'}}}}">{{mail.date | moment:'MMMM Do YYYY, h:mm:ss a'}}</time>
             <ul class="list-group-item-actions list-unstyled list-inline">

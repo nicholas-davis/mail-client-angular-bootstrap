@@ -4,7 +4,7 @@ mailModule.controller('loaderController', ['$scope', '$timeout',
 
         //Give feedback to user
         $timeout(function () {
-            $scope.$ctrl.text = 'Still loading..';
+            $scope.$ctrl.text = 'Still loading...';
         }, 10000).then($timeout(function () {
             $scope.$ctrl.text = 'Something went wrong';
         }, 30000));  

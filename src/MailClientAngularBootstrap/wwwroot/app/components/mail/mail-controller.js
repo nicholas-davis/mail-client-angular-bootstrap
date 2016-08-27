@@ -21,6 +21,7 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'Us
             $scope.mail = mail;
         });
 
+        //Get the number of unread messages
         MailService.getMailConfig().then(function (response) {
             $scope.inboxUnread = response.inbox.unread;
         });

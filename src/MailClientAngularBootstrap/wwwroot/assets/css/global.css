@@ -9690,7 +9690,8 @@ MIT License: https://github.com/driftyco/ionicons
 body main {
   overflow-y: auto;
 }
-body aside {
+body aside,
+body .aside-nav {
   width: 400px;
   float: left !important;
 }
@@ -9709,7 +9710,7 @@ body .main-nav {
 body main,
 body aside {
   padding-top: 50px;
-  position: fixed;
+  position: relative;
 }
 /*=================================================*/
 /* =Reset
@@ -10235,6 +10236,26 @@ div[ui-view],
 .list-group-mail-items .list-group-item .list-group-item-text {
   font-size: 12px;
 }
+.mail-content .mail-icon {
+  width: 50%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  left: 0;
+  bottom: inherit;
+  right: 0;
+  position: absolute;
+  text-align: center;
+}
+.mail-content .mail-icon,
+.mail-content .mail-icon .icon {
+  color: #c0c0c0;
+}
+.mail-content .mail-icon:before,
+.mail-content .mail-icon .icon:before {
+  vertical-align: bottom;
+}
 .mail-content .mail-header .mail-header-subject {
   margin-bottom: 3px !important;
 }
@@ -10344,6 +10365,9 @@ div[ui-view],
 }
 .icon.icon-6x {
   font-size: 6em;
+}
+.icon.icon-10x {
+  font-size: 10em;
 }
 /*loader*/
 .loader {
