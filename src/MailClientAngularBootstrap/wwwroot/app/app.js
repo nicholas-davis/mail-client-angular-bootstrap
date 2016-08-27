@@ -3,6 +3,7 @@ var mailClientApp = angular.module('mailClientApp', [
     'ngAnimate',
     'ngMessages',
     'mailClientApp.mail',
+    'mailClientApp.message',
     'mailClientApp.inbox',
     'mailClientApp.draft',
     'mailClientApp.sent',
@@ -46,6 +47,8 @@ mailClientApp.config(['$stateProvider', '$urlRouterProvider',
         }).state('Mail.Message', {
             url: null, //without :messageID === pretty URL
             templateUrl: 'app/components/message/message-view.html',
+            controller: "MessageController",
+            controllerAs: "message",
             params: {
                 messageID: null,
                 guid: null,
@@ -60,28 +63,6 @@ mailClientApp.config(['$stateProvider', '$urlRouterProvider',
                 message: null,
                 date: null,
                 tags: null,
-            },
-            controller: function ($scope, $stateParams, $filter) {
-                //State params
-                $scope.vmMessage = {
-                    "messageID": $stateParams.messageID,
-                    "guid": $stateParams.guid,
-                    "type": $stateParams.type,
-                    "from": {
-                        "firstName": $stateParams.fromFirstName,
-                        "lastName": $stateParams.fromLastName,
-                        "email": $stateParams.fromEmail
-                    },
-                    "to": {
-                        "firstName": $stateParams.toFirstName,
-                        "lastName": $stateParams.toLastName,
-                        "email": $stateParams.toEmail
-                    },
-                    "subject": $stateParams.subject,
-                    "message": $stateParams.message,
-                    "date": $stateParams.date,
-                    "tags": $stateParams.tags
-                }
             }
         }).state('Mail.Inbox', {
             url: '^/inbox',

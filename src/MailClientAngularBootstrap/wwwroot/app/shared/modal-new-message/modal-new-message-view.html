@@ -7,19 +7,10 @@
 </div>
 <div class="modal-body">
     <loader text="modal.loadingText" ng-if="isLoading"></loader>
-    <form ng-if="!isLoading">
-        <div class="form-group">
-            <label for="messageTo" class="sr-only">To</label>
-            <input type="text" class="form-control" id="messageTo" placeholder="To">
-        </div>
-        <div class="form-group">
-            <label for="messageFrom" class="sr-only">From</label>
-            <input type="text" class="form-control" id="messageFrom" placeholder="From">
-        </div>
-        <div class="form-group">
-            <label for="messageSubject" class="sr-only">From</label>
-            <input type="text" class="form-control" id="toEmail" placeholder="Subject">
-        </div>
+    <form name="messageForm" ng-if="!isLoading">
+        <validate id="messageTo" element-type="text" element-class="form-control" label-class="sr-only" labe-text="To" placeholder="To"></validate>
+        <validate id="messageFrom" element-type="text" element-class="form-control" label-class="sr-only" labe-text="From" placeholder="From"></validate>
+        <validate id="messageSubject" element-type="text" element-class="form-control" label-class="sr-only" labe-text="Subject" placeholder="Subject"></validate>
         <div class="form-group">
             <label for="messageEmail" class="sr-only">Message</label>
             <textarea id="messageEmail" class="form-control" rows="6"></textarea>
