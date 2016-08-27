@@ -1,14 +1,16 @@
 //Mail Client App
 var mailClientApp = angular.module('mailClientApp', [
-  'mailClientApp.mail',
-  'mailClientApp.inbox',
-  'mailClientApp.draft',
-  'mailClientApp.sent',
-  'mailClientApp.archive',
-  'mailClientApp.trash',
-  'angularMoment',
-  'ui.bootstrap',
-  'ui.router',
+    'ngAnimate',
+    'ngMessages',
+    'mailClientApp.mail',
+    'mailClientApp.inbox',
+    'mailClientApp.draft',
+    'mailClientApp.sent',
+    'mailClientApp.archive',
+    'mailClientApp.trash',
+    'angularMoment',
+    'ui.bootstrap',
+    'ui.router',
 ]);
 
 mailClientApp.run(['$rootScope', '$state', '$stateParams',
