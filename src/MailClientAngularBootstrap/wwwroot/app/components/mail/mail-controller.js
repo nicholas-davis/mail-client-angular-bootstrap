@@ -26,6 +26,8 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', '$q
 
                 if (mail) {
                     deferred.resolve(mail);
+                } else {
+                    deferred.reject();
                 }
 
                 return deferred.promise;
@@ -33,10 +35,14 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', '$q
             
             //Mail promise
             $scope.asyncMail().then(function (mail) {
+                //print messages
                 $scope.mail = mail;
+            }).catch(function () {
+                //Display alert for user 
+                AlertService.alerts.add('danger', 'Something went wrong', 20000)
             }).finally(function () {
                 //Hide loader
-                $scope.isLoading = false
+                $scope.isLoading = false;
             });
         });
 
@@ -49,8 +55,6 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', '$q
         $scope.selectMessageItem = function (mail) {
             $scope.selectedMessageItem = mail;
         };
-
-
 
     }
 ]);
