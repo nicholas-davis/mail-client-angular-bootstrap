@@ -12,11 +12,11 @@ var mailClientApp = angular.module('mailClientApp', [
     'mailClientApp.trash',
     'angularMoment',
     'ui.bootstrap',
-    'ui.router',
+    'ui.router'
 ]);
 
-mailClientApp.run(['$rootScope', '$state', '$stateParams',
-    function ($rootScope, $state, $stateParams) {
+mailClientApp.run(['$rootScope', '$state', '$stateParams', '$location',
+    function ($rootScope, $state, $stateParams, $location) {
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
 
@@ -29,6 +29,11 @@ mailClientApp.run(['$rootScope', '$state', '$stateParams',
             $rootScope.previousStateURL = from.url;
             $rootScope.currentState = to.name;
             $rootScope.currentStateURL = to.url;
+
+            //Set active class to main tabs
+            $rootScope.isActive = function (route) {
+                return route === $location.path();
+            }
 
             //If modal is opened, discard modal when the user clicks on back btn
             //$uibModalStack.dismissAll('cancel');
@@ -63,14 +68,6 @@ mailClientApp.config(['$stateProvider', '$urlRouterProvider',
                 message: null,
                 date: null,
                 tags: null,
-            },
-            resolve: {
-                pageTitle: [
-                    '$stateParams', function ($stateParams) {
-                        console.log($stateParams)
-                        $stateParams.pageTitle = 'Message from ' + $stateParams.fromFirstName + ' ' + $stateParams.fromLastName + ' (' + $stateParams.fromEmail + ')';
-                    }
-                ]
             }
         }).state('Mail.Inbox', {
             url: '^/inbox',

@@ -16,20 +16,20 @@
         </form>
     </nav>
     <div class="list-group list-group-mail-menu">
-        <a class="list-group-item" title="Inbox" ui-sref="Mail.Inbox" ui-sref-active="active">
+        <a class="list-group-item" title="Inbox" ui-sref="Mail.Inbox" ng-class="{'active' : isActive('/inbox')}">
             <span class="icon icon-2x ion-ios-email-outline"></span>
             <span class="badge" ng-if="inboxUnread">{{inboxUnread}}</span>
         </a>
-        <a class="list-group-item" title="Draft" ui-sref="Mail.Draft" ui-sref-active="active">
+        <a class="list-group-item" title="Draft" ui-sref="Mail.Draft" ng-class="{'active' : isActive('/draft')}">
             <span class="icon icon-2x ion-document"></span>
         </a>
-        <a class="list-group-item" title="Sent" ui-sref="Mail.Sent" ui-sref-active="active">
+        <a class="list-group-item" title="Sent" ui-sref="Mail.Sent" ng-class="{'active' : isActive('/sent')}">
             <span class="icon  icon-2x ion-paper-airplane"></span>
         </a>
-        <a class="list-group-item" title="Archive" ui-sref="Mail.Archive" ui-sref-active="active">
+        <a class="list-group-item" title="Archive" ui-sref="Mail.Archive" ng-class="{'active' : isActive('/archive')}">
             <span class="icon icon-2x ion-ios-box-outline"></span>
         </a>
-        <a class="list-group-item" title="Trash" ui-sref="Mail.Trash" ui-sref-active="active">
+        <a class="list-group-item" title="Trash" ui-sref="Mail.Trash" ng-class="{'active' : isActive('/trash')}">
             <span class="icon icon-2x ion-ios-trash-outline"></span>
         </a>
     </div>
