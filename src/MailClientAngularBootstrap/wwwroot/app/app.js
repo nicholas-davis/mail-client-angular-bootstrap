@@ -46,7 +46,6 @@ mailClientApp.config(['$stateProvider', '$urlRouterProvider',
             controller: "MailController",
             controllerAs: "mail",
         }).state('Mail.Message', {
-            url: null, //without :messageID === pretty URL
             templateUrl: 'app/components/message/message-view.html',
             controller: "MessageController",
             controllerAs: "message",
@@ -64,6 +63,14 @@ mailClientApp.config(['$stateProvider', '$urlRouterProvider',
                 message: null,
                 date: null,
                 tags: null,
+            },
+            resolve: {
+                pageTitle: [
+                    '$stateParams', function ($stateParams) {
+                        console.log($stateParams)
+                        $stateParams.pageTitle = 'Message from ' + $stateParams.fromFirstName + ' ' + $stateParams.fromLastName + ' (' + $stateParams.fromEmail + ')';
+                    }
+                ]
             }
         }).state('Mail.Inbox', {
             url: '^/inbox',
