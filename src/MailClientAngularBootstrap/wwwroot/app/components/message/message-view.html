@@ -28,7 +28,7 @@
                         </li>
                         <li>
                             <a href="#">
-                                <span class="icon icon-2x {{(vmMessage.type | index: 'flagged') ? 'ion-ios-flag' : 'ion-ios-flag-outline'}}"></span>                           
+                                <span class="icon icon-2x {{(vmMessage.type | index: 'flagged') ? 'ion-ios-flag' : 'ion-ios-flag-outline'}}"></span>
                             </a>
                         </li>
                         <li>
@@ -41,7 +41,7 @@
                     {{vmMessage.type}}<br />
                     {{vmMessage.guid}}<br />
                     {{vmMessage.tags}}<br />
-                    {{vmMessage.message}}
+                    <div ng-bind-html="vmMessage.message"></div>
                 </div>
             </div>
         </div>

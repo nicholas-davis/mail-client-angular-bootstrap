@@ -35,6 +35,7 @@
 /// <reference path="assets/lib/angular-bootstrap/ui-bootstrap-tpls.js" />
 /// <reference path="assets/lib/angular-messages/angular-messages.js" />
 /// <reference path="assets/lib/angular-moment/angular-moment.js" />
+/// <reference path="assets/lib/angular-sanitize/angular-sanitize.js" />
 /// <reference path="assets/lib/angular-ui-router/release/angular-ui-router.js" />
 /// <reference path="assets/lib/bootstrap/dist/js/bootstrap.js" />
 /// <reference path="assets/lib/jquery/dist/jquery.js" />

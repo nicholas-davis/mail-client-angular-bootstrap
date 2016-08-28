@@ -2,6 +2,7 @@
 var mailClientApp = angular.module('mailClientApp', [
     'ngAnimate',
     'ngMessages',
+    'ngSanitize',
     'mailClientApp.mail',
     'mailClientApp.message',
     'mailClientApp.inbox',

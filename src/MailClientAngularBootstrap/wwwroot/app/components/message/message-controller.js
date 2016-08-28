@@ -1,8 +1,8 @@
 ﻿//MessageController
 var messageModule = angular.module('mailClientApp.message', []);
 
-messageModule.controller('MessageController', ['$scope', '$stateParams',
-    function ($scope, $stateParams) {
+messageModule.controller('MessageController', ['$scope', '$stateParams', '$sce',
+    function ($scope, $stateParams, $sce) {
 
         //State params
         $scope.vmMessage = {
@@ -20,7 +20,7 @@ messageModule.controller('MessageController', ['$scope', '$stateParams',
                 "email": $stateParams.toEmail
             },
             "subject": $stateParams.subject,
-            "message": $stateParams.message,
+            "message": $sce.trustAsHtml($stateParams.message),
             "date": $stateParams.date,
             "tags": $stateParams.tags
         }

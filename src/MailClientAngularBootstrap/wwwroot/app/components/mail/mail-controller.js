@@ -19,7 +19,7 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', '$q
         //User's mail
         $scope.isLoading = true;
         $scope.$on("mail", function mailEvent(event, mail) {
-
+            
             //Mail
             $scope.asyncMail = function () {
                 var deferred = $q.defer();
