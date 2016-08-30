@@ -15,8 +15,8 @@ var mailClientApp = angular.module('mailClientApp', [
     'ui.router'
 ]);
 
-mailClientApp.run(['$rootScope', '$state', '$stateParams', '$location',
-    function ($rootScope, $state, $stateParams, $location) {
+mailClientApp.run(['$rootScope', '$state', '$stateParams', '$location', '$uibModalStack',
+    function ($rootScope, $state, $stateParams, $location, $uibModalStack) {
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
 
@@ -31,12 +31,12 @@ mailClientApp.run(['$rootScope', '$state', '$stateParams', '$location',
             $rootScope.currentStateURL = to.url;
 
             //Set active class to main tabs
-            $rootScope.isActive = function (route) {
+            $rootScope.isPage = function (route) {
                 return route === $location.path();
             }
 
             //If modal is opened, discard modal when the user clicks on back btn
-            //$uibModalStack.dismissAll('cancel');
+            $uibModalStack.dismissAll('cancel');
         });
     }
 ]);
@@ -69,6 +69,10 @@ mailClientApp.config(['$stateProvider', '$urlRouterProvider',
                 date: null,
                 tags: null,
             }
+        }).state('Mail.Folder', {
+            templateUrl: 'app/components/folder/folder-view.html',
+            controller: "FolderController",
+            controllerAs: "folder",
         }).state('Mail.Inbox', {
             url: '^/inbox',
             templateUrl: 'app/components/inbox/inbox-view.html',

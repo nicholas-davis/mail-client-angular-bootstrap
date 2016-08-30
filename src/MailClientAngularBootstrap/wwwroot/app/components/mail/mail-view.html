@@ -16,20 +16,20 @@
         </form>
     </nav>
     <div class="list-group list-group-mail-menu">
-        <a class="list-group-item" title="Inbox" ui-sref="Mail.Inbox" ng-class="{'active' : isActive('/inbox')}">
+        <a class="list-group-item" title="Inbox" ui-sref="Mail.Inbox" ng-class="{'active' : isPage('/inbox')}">
             <span class="icon icon-2x ion-ios-email-outline"></span>
             <span class="badge" ng-if="inboxUnread">{{inboxUnread}}</span>
         </a>
-        <a class="list-group-item" title="Draft" ui-sref="Mail.Draft" ng-class="{'active' : isActive('/draft')}">
+        <a class="list-group-item" title="Draft" ui-sref="Mail.Draft" ng-class="{'active' : isPage('/draft')}">
             <span class="icon icon-2x ion-document"></span>
         </a>
-        <a class="list-group-item" title="Sent" ui-sref="Mail.Sent" ng-class="{'active' : isActive('/sent')}">
+        <a class="list-group-item" title="Sent" ui-sref="Mail.Sent" ng-class="{'active' : isPage('/sent')}">
             <span class="icon  icon-2x ion-paper-airplane"></span>
         </a>
-        <a class="list-group-item" title="Archive" ui-sref="Mail.Archive" ng-class="{'active' : isActive('/archive')}">
+        <a class="list-group-item" title="Archive" ui-sref="Mail.Archive" ng-class="{'active' : isPage('/archive')}">
             <span class="icon icon-2x ion-ios-box-outline"></span>
         </a>
-        <a class="list-group-item" title="Trash" ui-sref="Mail.Trash" ng-class="{'active' : isActive('/trash')}">
+        <a class="list-group-item" title="Trash" ui-sref="Mail.Trash" ng-class="{'active' : isPage('/trash')}">
             <span class="icon icon-2x ion-ios-trash-outline"></span>
         </a>
     </div>
@@ -71,7 +71,7 @@
                                 <modal title="New Message" size="lg" template-url="app/shared/modal-new-message/modal-new-message-view.html" instance="modalNewMessageController" instance-data="null" css-class="navbar-nav-icon-link" btn-icon="ion-edit" btn-action-text="Send" btn-cancel-text="Cancel"></modal>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="#"title="Folders" ui-sref="Mail.Folder">
                                     <span class="icon icon-2x ion-ios-folder-outline"></span>
                                 </a>
                             </li>
