@@ -1096,6 +1096,7 @@ body {
 /*=================================================*/
 //= Header/Navbar
 /*=================================================*/
+
 /*navbar aside and main*/
 .navbar {
     width: 100%;
@@ -1360,20 +1361,6 @@ body {
     }
 }
 
-
-/*=================================================*/
-//= Footer
-/*=================================================*/
-/*=================================================*/
-//= Miscellaneous/Extras
-/*=================================================*/
-/*alert*/
-.alert {
-    z-index: @zindex-modal;
-    .text-center;
-    .absolute-center(400px, auto, -3px, 0, inherit, 0);
-}
-
 /*modal*/
 .modal {
 
@@ -1387,6 +1374,42 @@ body {
     .modal-body {
     }
 }
+
+.thumbnail {
+
+    &.thumbnail-folder {
+        .text-center;
+        .mar-top-xl;
+        .mar-bottom-none;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        .caption {
+            .pad-top-none;
+
+            h6 {
+                .mar-none;
+                .text-overflow-ellipsis;
+            }
+        }
+    }
+}
+/*alert*/
+.alert {
+    z-index: @zindex-modal;
+    .text-center;
+    .absolute-center(400px, auto, -3px, 0, inherit, 0);
+}
+
+
+/*=================================================*/
+//= Footer
+/*=================================================*/
+/*=================================================*/
+//= Miscellaneous/Extras
+/*=================================================*/
 
 /*icon*/
 .icon {

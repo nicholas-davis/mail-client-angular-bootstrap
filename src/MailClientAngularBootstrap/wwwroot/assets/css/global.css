@@ -10312,10 +10312,27 @@ div[ui-view],
   position: absolute;
   font-size: 85%;
 }
-/*=================================================*/
-/*=================================================*/
-/*=================================================*/
-/*=================================================*/
+/*modal*/
+.modal .modal-header .close {
+  padding: 8px !important;
+}
+.thumbnail.thumbnail-folder {
+  text-align: center;
+  margin-top: 15px !important;
+  margin-bottom: 0 !important;
+}
+.thumbnail.thumbnail-folder:hover {
+  text-decoration: none;
+}
+.thumbnail.thumbnail-folder .caption {
+  padding-top: 0 !important;
+}
+.thumbnail.thumbnail-folder .caption h6 {
+  margin: 0 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 /*alert*/
 .alert {
   z-index: 1050;
@@ -10330,10 +10347,10 @@ div[ui-view],
   right: 0;
   position: absolute;
 }
-/*modal*/
-.modal .modal-header .close {
-  padding: 8px !important;
-}
+/*=================================================*/
+/*=================================================*/
+/*=================================================*/
+/*=================================================*/
 /*icon*/
 .icon {
   color: #8a8a8a;
