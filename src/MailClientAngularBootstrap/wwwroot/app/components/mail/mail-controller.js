@@ -1,8 +1,8 @@
 ﻿//MailController
 var mailModule = angular.module('mailClientApp.mail', []);
 
-mailModule.controller('MailController', ['$scope', '$stateParams', '$state', '$q', 'UserService', 'MailService', 'AlertService',
-    function ($scope, $stateParams, $state, $q, UserService, MailService, AlertService) {
+mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'UtilitiesService', 'UserService', 'MailService', 'AlertService', 'FilterService',
+    function ($scope, $stateParams, $state, UtilitiesService, UserService, MailService, AlertService, FilterService) {
 
         //User's basic data
         UserService.getUser().then(function (response) {
@@ -19,22 +19,9 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', '$q
         //User's mail
         $scope.isLoading = true;
         $scope.$on("mail", function mailEvent(event, mail) {
-            
-            //Mail
-            $scope.asyncMail = function () {
-                var deferred = $q.defer();
 
-                if (mail) {
-                    deferred.resolve(mail);
-                } else {
-                    deferred.reject();
-                }
-
-                return deferred.promise;
-            }
-            
             //Mail promise
-            $scope.asyncMail().then(function (mail) {
+            UtilitiesService.async(mail).then(function () {
                 //print messages
                 $scope.mail = mail;
             }).catch(function () {
@@ -44,6 +31,7 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', '$q
                 //Hide loader
                 $scope.isLoading = false;
             });
+
         });
 
         //Get the number of unread messages

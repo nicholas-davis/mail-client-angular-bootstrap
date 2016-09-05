@@ -10317,6 +10317,7 @@ div[ui-view],
   padding: 8px !important;
 }
 .thumbnail.thumbnail-folder {
+  border: 2px solid #f7f7f7;
   text-align: center;
   margin-top: 15px !important;
   margin-bottom: 0 !important;

@@ -1,4 +1,4 @@
-﻿//EllipsisFilter
+﻿//IndexFilter
 mailModule.filter('index', [
     function () {
         return function (array, type) {
