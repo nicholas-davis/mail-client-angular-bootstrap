@@ -10067,8 +10067,8 @@ div[ui-view],
 .navbar {
   width: 100%;
   z-index: 1000;
+  border-bottom: 1px solid #c7c2c2;
   margin-bottom: 0 !important;
-  border: none !important;
   border-radius: 0 !important;
 }
 .navbar .navbar-brand {
@@ -10138,6 +10138,25 @@ div[ui-view],
 }
 /*=================================================*/
 /*=================================================*/
+/*sort*/
+.list-group-mail-sort {
+  background: #ebebeb;
+  border-bottom: 1px solid #c7c2c2;
+  margin-bottom: 0 !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+}
+.list-group-mail-sort .list-group-item {
+  padding: 1px !important;
+  background: none !important;
+  border: none !important;
+}
+.list-group-mail-sort .list-group-item .dropdown-toggle:hover,
+.list-group-mail-sort .list-group-item .dropdown-toggle:focus {
+  text-decoration: none;
+}
 /*aside main menu*/
 .list-group-mail-menu {
   width: 50px;

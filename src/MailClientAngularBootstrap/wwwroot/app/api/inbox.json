@@ -2757,7 +2757,7 @@
     {
       "id": "57b8be1449e648f46b86690e",
       "guid": "8408d57f-b032-4f84-9ad6-6fc1e9183a4b",
-      "type": [],
+      "type": [ "flagged" ],
       "from": {
         "firstName": "Nixon",
         "lastName": "Craft",
@@ -2784,7 +2784,7 @@
     {
       "id": "57b8be147fb2748377266c15",
       "guid": "24747e5e-b046-4a77-879c-45d68259127f",
-      "type": [],
+      "type": [ "flagged" ],
       "from": {
         "firstName": "Lawrence",
         "lastName": "Wiggins",

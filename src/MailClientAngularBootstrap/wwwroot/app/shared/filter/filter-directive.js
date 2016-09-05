@@ -7,8 +7,8 @@ mailModule.directive('filter', ['UtilitiesService', 'FilterService',
             controller: 'filterController',
             controllerAs: 'vmFilter',
             bindToController: {
+                filterType: '@',
                 filterKeyValue: '=',
-                filterValue: '=',
                 filterItems: '=',
             },
             link: function (scope, element, attrs, key) {
@@ -20,7 +20,7 @@ mailModule.directive('filter', ['UtilitiesService', 'FilterService',
                     scope.messages = scope.vmFilter.filterItems;
 
                     //list of filtered messages
-                    scope.temporaryMessages = FilterService.filter.item('filter', scope.messages, scope.vmFilter.filterKeyValue);
+                    scope.temporaryMessages = FilterService.filter.item(scope.vmFilter.filterType, scope.messages, { $: "date" });
 
                     //Setup mail items
                     scope.mail = {

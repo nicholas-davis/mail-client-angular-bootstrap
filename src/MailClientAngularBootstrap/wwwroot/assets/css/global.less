@@ -1101,8 +1101,8 @@ body {
 .navbar {
     width: 100%;
     z-index: @zindex-navbar;
+    border-bottom: 1px solid #c7c2c2;
     .mar-bottom-none;
-    .border-none;
     .border-radius-none;
 
     .navbar-brand { //navbar aside brand
@@ -1188,6 +1188,30 @@ body {
 /*=================================================*/
 //= Structure
 /*=================================================*/
+
+/*sort*/
+.list-group-mail-sort {
+    background: #ebebeb;
+    border-bottom: 1px solid #c7c2c2;
+    .mar-bottom-none;
+    .pad-left-md;
+    .pad-right-md;
+    .pad-top-xs;
+    .pad-bottom-xs;
+
+    .list-group-item {
+        .pad-xxs;
+        .bg-none;
+        .border-none;
+
+        .dropdown-toggle {
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+}
 
 /*aside main menu*/
 .list-group-mail-menu {
