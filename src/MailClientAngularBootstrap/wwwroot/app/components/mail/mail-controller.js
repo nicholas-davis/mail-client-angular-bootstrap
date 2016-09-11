@@ -17,9 +17,9 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'Ut
         });
 
         //User's mail
+        $scope.predicate = '-date';
         $scope.isLoading = true;
         $scope.$on("mail", function mailEvent(event, mail) {
-
             //Mail promise
             UtilitiesService.async(mail).then(function () {
                 //print messages

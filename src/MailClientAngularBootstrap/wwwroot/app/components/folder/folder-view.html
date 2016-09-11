@@ -1,7 +1,7 @@
 ﻿<!-- components/Folder -->
 <div class="row">
     <div class="col-md-2" ng-repeat="folder in folders track by $index">
-        <a href="javascript:;" class="thumbnail thumbnail-folder" title="{{folder.name}} was created on {{folder.created | moment: 'MMMM Do YYYY, h:mm:ss a'}}" filter filter-items="mail.messages" filter-key-value="{'folder': folder.name}">
+        <a href="javascript:;" class="thumbnail thumbnail-folder" title="{{folder.name}} was created on {{folder.created | moment: 'MMMM Do YYYY, h:mm:ss a'}}" filter filter-type="filter" filter-items="mail.messages" filter-key="'folder'" filter-value="folder.name">
             <span class="icon icon-4x ion-ios-folder-outline"></span>
             <div class="caption">
                 <h6>{{folder.name}}</h6>

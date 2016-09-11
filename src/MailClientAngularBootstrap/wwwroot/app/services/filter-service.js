@@ -3,8 +3,9 @@ mailModule.service('FilterService', ['$filter', function ($filter) {
 
     //filter
     this.filter = {
-        item: function (type, array, expression) {
-            return $filter(type)(array, expression);
+        activeFilters: {},
+        item: function (type, array, expression, boolean) {
+            return $filter(type)(array, expression, boolean);
         },
         push: function (index, array, list) {
             for (var index; index < list.length; index++) {

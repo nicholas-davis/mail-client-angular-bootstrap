@@ -17,7 +17,7 @@
     </nav>
     <div class="list-group list-group-mail-sort clearfix">
         <div class="list-group-item pull-left">
-            {{pageTitle}} ({{mail.messages.length}})
+            {{pageTitle}} ({{searchMessagesResults.length}})
         </div>
         <div class="list-group-item pull-right">
             <div class="btn-group btn-group-xs" uib-dropdown>
@@ -26,22 +26,29 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" aria-labelledby="single-button">
                     <li role="menuitem">
-                        <a href="javascript:;" filter filter-type="filter" filter-items="mail.messages" filter-key-value="{date}">Date</a>
+                        <a href="javascript:;" filter filter-type="orderBy" filter-items="mail.messages" filter-value="'date'">Date</a>
                     </li>
                     <li role="menuitem">
-                        <a href="javascript:;" filter filter-type="filter" filter-items="mail.messages" filter-key-value="{'type': 'flagged'}">Flagged</a>
+                        <a href="javascript:;" filter filter-type="filter" filter-items="mail.messages" filter-key="'type'"  filter-value="'flagged'">Flagged</a>
                     </li>
                     <li role="menuitem">
-                        <a href="javascript:;" filter filter-type="filter" filter-items="mail.messages" filter-key-value="{'type': 'Unread'}">Unread</a>
+                        <a href="javascript:;" filter filter-type="filter" filter-items="mail.messages" filter-key="'type'" filter-value="'unread'">Unread</a>
                     </li>
-                    <li class="divider">
+                    <li class="divider"></li>
+                    <!--<li role="menuitem" ng-click="$event.stopPropagation();">
+                        <a href="javascript:;" ng-model="reverse" ng-value="true">Ascending</a>
+                    </li>
+                    <li role="menuitem" ng-click="$event.stopPropagation();">
+                        <a href="javascript:;" ng-model="reverse" ng-value="false">Descending</a>
+                    </li>-->
 
+                    <li role="menuitem" ng-click="$event.stopPropagation();">
+                        Ascending
+                        <input type="radio" ng-model="reverse" ng-value="false">
                     </li>
-                    <li role="menuitem">
-                        <a href="javascript:;">Ascending</a>
-                    </li>
-                    <li role="menuitem">
-                        <a href="javascript:;">Descending</a>
+                    <li role="menuitem" ng-click="$event.stopPropagation();">
+                        Descending
+                        <input type="radio" ng-model="reverse" ng-value="true">
                     </li>
                 </ul>
             </div>
@@ -67,7 +74,7 @@
     </div>
     <div class="list-group list-group-mail-items">
         <loader text="modal.loadingText" ng-if="isLoading"></loader>
-        <a id="{{mail.id}}" href="#" ui-sref="Mail.Message({ messageID: mail.id, guid: mail.guid, type: mail.type, fromFirstName: mail.from.firstName, fromLastName: mail.from.lastName, fromEmail: mail.from.email, toFirstName: mail.to.firstName, toLastName: mail.to.lastName, toEmail: mail.to.email, subject: mail.subject, message: mail.message, date: mail.date, tags: mail.tags })" class="list-group-item" ng-class="{'active': selectedMessageItem === mail.id}" ng-click="selectMessageItem( mail.id )" ng-repeat="mail in mail.messages | filter: searchMessages | orderBy: '-date' as searchMessagesResults track by $index" ng-if="!isLoading">
+        <a id="{{mail.id}}" href="#" ui-sref="Mail.Message({ messageID: mail.id, guid: mail.guid, type: mail.type, fromFirstName: mail.from.firstName, fromLastName: mail.from.lastName, fromEmail: mail.from.email, toFirstName: mail.to.firstName, toLastName: mail.to.lastName, toEmail: mail.to.email, subject: mail.subject, message: mail.message, date: mail.date, tags: mail.tags })" class="list-group-item" ng-class="{'active': selectedMessageItem === mail.id}" ng-click="selectMessageItem( mail.id )" ng-repeat="mail in mail.messages | orderBy: predicate:reverse | filter: searchMessages as searchMessagesResults track by $index" ng-if="!isLoading">
             <h5 class="list-group-item-heading">{{mail.subject}}</h5>
             <time class="list-group-item-date" datetime="{{mail.date | moment: 'MMMM Do YYYY, h:mm:ss a'}}}}">{{mail.date | moment:'MMMM Do YYYY, h:mm:ss a'}}</time>
             <ul class="list-group-item-actions list-unstyled list-inline">
