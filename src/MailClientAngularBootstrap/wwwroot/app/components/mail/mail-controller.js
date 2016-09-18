@@ -17,11 +17,21 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'Ut
         });
 
         //User's mail
-        $scope.predicate = '-date';
         $scope.isLoading = true;
         $scope.$on("mail", function mailEvent(event, mail) {
+
             //Mail promise
             UtilitiesService.async(mail).then(function () {
+                //Selected text item
+                $scope.sortTest = mail.selected;
+               
+                //Set predicate
+                if (typeof $scope.predicate === 'undefined') {
+                    $scope.predicate = '-date'
+                } else {
+                    $scope.predicate = FilterService.filter.item('lowercase', $scope.sortTest);
+                }
+
                 //print messages
                 $scope.mail = mail;
             }).catch(function () {
@@ -31,7 +41,7 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'Ut
                 //Hide loader
                 $scope.isLoading = false;
             });
-
+            
         });
 
         //Get the number of unread messages

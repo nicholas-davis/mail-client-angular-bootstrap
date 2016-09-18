@@ -3,7 +3,6 @@ mailModule.service('FilterService', ['$filter', function ($filter) {
 
     //filter
     this.filter = {
-        activeFilters: {},
         item: function (type, array, expression, boolean) {
             return $filter(type)(array, expression, boolean);
         },

@@ -16,23 +16,23 @@
         </form>
     </nav>
     <div class="list-group list-group-mail-sort clearfix">
-        <div class="list-group-item pull-left">
+        <div class="list-group-item pull-left" ng-if="searchMessagesResults.length">
             {{pageTitle}} ({{searchMessagesResults.length}})
         </div>
         <div class="list-group-item pull-right">
             <div class="btn-group btn-group-xs" uib-dropdown>
                 <button id="single-button" type="button" class="btn btn-link" uib-dropdown-toggle>
-                    Sort by <span class="caret"></span>
+                    Sort by {{sortTest ? sortTest : 'Date'}} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" aria-labelledby="single-button">
                     <li role="menuitem">
-                        <a href="javascript:;" filter filter-type="orderBy" filter-items="mail.messages" filter-value="'date'">Date</a>
+                        <a href="javascript:;" filter filter-type="orderBy" filter-items="mail.messages" filter-value="'date'" filter-text="true">Date</a>
                     </li>
                     <li role="menuitem">
-                        <a href="javascript:;" filter filter-type="filter" filter-items="mail.messages" filter-key="'type'"  filter-value="'flagged'">Flagged</a>
+                        <a href="javascript:;" filter filter-type="filter" filter-items="mail.messages" filter-key="'type'" filter-value="'flagged'" filter-text="true">Flagged</a>
                     </li>
                     <li role="menuitem">
-                        <a href="javascript:;" filter filter-type="filter" filter-items="mail.messages" filter-key="'type'" filter-value="'unread'">Unread</a>
+                        <a href="javascript:;" filter filter-type="filter" filter-items="mail.messages" filter-key="'type'" filter-value="'unread'" filter-text="true">Unread</a>
                     </li>
                     <li class="divider"></li>
                     <!--<li role="menuitem" ng-click="$event.stopPropagation();">
