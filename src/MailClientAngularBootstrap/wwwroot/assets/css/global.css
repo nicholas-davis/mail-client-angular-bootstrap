@@ -9688,7 +9688,10 @@ MIT License: https://github.com/driftyco/ionicons
 /*=================================================*/
 /*=================================================*/
 body main {
-  overflow-y: auto;
+  position: relative;
+}
+body aside {
+  position: fixed;
 }
 body aside,
 body .aside-nav {
@@ -9709,8 +9712,7 @@ body .main-nav {
 }
 body main,
 body aside {
-  padding-top: 50px;
-  position: relative;
+  padding-top: 81px;
 }
 /*=================================================*/
 /* =Reset
@@ -10065,7 +10067,6 @@ div[ui-view],
 /*=================================================*/
 /*navbar aside and main*/
 .navbar {
-  width: 100%;
   z-index: 1000;
   border-bottom: 1px solid #c7c2c2;
   margin-bottom: 0 !important;
@@ -10136,12 +10137,21 @@ div[ui-view],
 .navbar .navbar-nav-icons li a .navbar-nav-icon-link .icon {
   color: #125e85;
 }
+.navbar .navbar-nav.navbar-right:last-child {
+  margin-right: 0 !important;
+}
 /*=================================================*/
 /*=================================================*/
 /*sort*/
 .list-group-mail-sort {
   background: #ebebeb;
   border-bottom: 1px solid #c7c2c2;
+  width: 100%;
+  top: 50px;
+  left: 0;
+  bottom: inherit;
+  right: inherit;
+  position: absolute;
   margin-bottom: 0 !important;
   padding-left: 8px !important;
   padding-right: 8px !important;
@@ -10276,6 +10286,7 @@ div[ui-view],
   vertical-align: bottom;
 }
 .mail-content .mail-header .mail-header-subject {
+  margin-top: -15px;
   margin-bottom: 3px !important;
 }
 .mail-content .mail-header .mail-header-from {
