@@ -979,7 +979,11 @@ html, body, main, aside, div[ui-view] {
 body {
 
     main {
-        .scroll-y;
+        position: relative;
+    }
+
+    aside {
+        position: fixed;
     }
 
     aside, .aside-nav {
@@ -1001,8 +1005,7 @@ body {
     }
 
     main, aside {
-        padding-top: @navbar-height;
-        position: relative;
+        padding-top: @navbar-height + 31px;
     }
 }
 
@@ -1099,7 +1102,6 @@ body {
 
 /*navbar aside and main*/
 .navbar {
-    width: 100%;
     z-index: @zindex-navbar;
     border-bottom: 1px solid #c7c2c2;
     .mar-bottom-none;
@@ -1161,6 +1163,7 @@ body {
     }
 
     .navbar-nav-icons {
+
         li {
 
             a {
@@ -1182,6 +1185,16 @@ body {
             }
         }
     }
+
+    .navbar-nav {
+
+        &.navbar-right {
+            //hack: override the last navbar-right item inside container-fluid
+            &:last-child {
+                .mar-right-none;
+            }
+        }
+    }
 }
 
 
@@ -1193,6 +1206,8 @@ body {
 .list-group-mail-sort {
     background: #ebebeb;
     border-bottom: 1px solid #c7c2c2;
+    width: 100%;
+    .absolute(@navbar-height, 0, inherit, inherit);
     .mar-bottom-none;
     .pad-left-md;
     .pad-right-md;
@@ -1342,6 +1357,7 @@ body {
     .mail-header {
 
         .mail-header-subject {
+            margin-top: -15px;
             .mar-bottom-xs;
         }
 
