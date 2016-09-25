@@ -11,7 +11,7 @@
         <!--To-->
         <validate form="messageForm" id="messageTo" element-type="text" element-class="form-control" label-class="sr-only" label-text="To" placeholder="To" is-email="true" is-required="true"></validate>
         <!--From-->
-        <validate form="messageForm" id="messageFrom" element-type="text" element-class="form-control" label-class="sr-only" label-text="From" placeholder="From" is-disabled="true"></validate>
+        <validate form="messageForm" id="messageFrom" element-type="text" element-class="form-control" label-class="sr-only" label-text="From" placeholder="{{modal.instanceData.email}}" is-disabled="true"></validate>
         <!--Subject-->
         <validate form="messageForm" id="messageSubject" element-type="text" element-class="form-control" label-class="sr-only" label-text="Subject" placeholder="Subject"></validate>
         <!--Compose-->
