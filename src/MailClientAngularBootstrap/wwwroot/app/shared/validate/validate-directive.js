@@ -8,11 +8,12 @@ mailModule.directive('validate', [
             controller: 'validateController', 
             controllerAs: 'vmValidate',
             bindToController: {
-                id: '@',
+                form: '=',
+                id: '=',
                 elementType: "@",
                 elementClass: '@',
                 labelClass: '@',
-                labeText: '@',
+                labelText: '@',
                 placeholder: '@'
             },
             link: function (scope, element, attrs) {
