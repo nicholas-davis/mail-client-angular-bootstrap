@@ -8,16 +8,19 @@
 <div class="modal-body">
     <loader text="modal.loadingText" ng-if="isLoading"></loader>
     <form name="messageForm" ng-if="!isLoading">
-        <validate form="messageForm" id="messageTo" element-type="text" element-class="form-control" label-class="sr-only" label-text="To" placeholder="To"></validate>
-        <validate form="messageForm" id="messageFrom" element-type="text" element-class="form-control" label-class="sr-only" label-text="From" placeholder="From"></validate>
+        <!--To-->
+        <validate form="messageForm" id="messageTo" element-type="text" element-class="form-control" label-class="sr-only" label-text="To" placeholder="To" is-email="true" is-required="true"></validate>
+        <!--From-->
+        <validate form="messageForm" id="messageFrom" element-type="text" element-class="form-control" label-class="sr-only" label-text="From" placeholder="From" is-disabled="true"></validate>
+        <!--Subject-->
         <validate form="messageForm" id="messageSubject" element-type="text" element-class="form-control" label-class="sr-only" label-text="Subject" placeholder="Subject"></validate>
+        <!--Compose-->
         <div class="form-group">
-            <label for="messageEmail" class="sr-only">Message</label>
-            <textarea id="messageEmail" class="form-control" rows="6"></textarea>
+            <label for="messageCompose" class="sr-only">Message</label>
+            <textarea id="messageCompose" class="form-control" rows="6"></textarea>
         </div>
     </form>
 </div>
-
 <div class="modal-footer" ng-if="!isLoading">
-    <button class="btn btn-primary" type="button" ng-click="modal.action()">{{modal.btnActionText}}</button>
+    <button class="btn btn-primary" type="button" ng-click="modal.action()" ng-disabled="messageFrom">{{modal.btnActionText}}</button>
 </div>

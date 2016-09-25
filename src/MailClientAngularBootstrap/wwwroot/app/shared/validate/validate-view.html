@@ -1,8 +1,11 @@
 ﻿<!-- shared/ValidateView -->
 <div class="form-group" ng-class="{ 'has-error': vmValidate.form[vmValidate.placeholder].$invalid && vmValidate.form[vmValidate.placeholder].$dirty}">
     <label for="{{vmValidate.id}}" class="{{vmValidate.labelClass}}"></label>
-    <input type="text" name="{{vmValidate.placeholder}}" class="{{vmValidate.elementClass}}" id="{{vmValidate.id}}" placeholder="{{vmValidate.placeholder}}" ng-model="vmValidate.id" required>
+    <input type="{{vmValidate.elementType}}" name="{{vmValidate.placeholder}}" class="{{vmValidate.elementClass}}" id="{{vmValidate.id}}" placeholder="{{vmValidate.placeholder}}" ng-model="vmValidate.id" ng-pattern="isEmail" ng-disabled="isDisabled" ng-required="isRequired">
+    {{isDisabled}}
+    <!--Display feedback messages-->
     <div ng-messages="vmValidate.form[vmValidate.placeholder].$error" ng-if="vmValidate.form[vmValidate.placeholder].$dirty" role="alert">
-        <p class="help-block" ng-message="required">You did not enter a field</p>
+        <p class="help-block" ng-message="required">You did not enter a value</p>
+        <p class="help-block" ng-message="pattern">Email Address in invalid format</p>
     </div>
 </div>
