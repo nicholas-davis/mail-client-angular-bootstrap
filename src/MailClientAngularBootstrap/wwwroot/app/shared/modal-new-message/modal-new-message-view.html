@@ -9,11 +9,11 @@
     <loader text="modal.loadingText" ng-if="isLoading"></loader>
     <form name="messageForm" ng-if="!isLoading">
         <!--To-->
-        <validate form="messageForm" id="messageTo" element-type="text" element-class="form-control" label-class="sr-only" label-text="To" placeholder="To" is-email="true" is-required="true"></validate>
+        <validate form="messageForm" id="messageTo" element-type="text" element-class="form-control" label-class="sr-only" label-text="To" placeholder="To" value="formEntry.to" is-email="true" is-required="true"></validate>
         <!--From-->
         <validate form="messageForm" id="messageFrom" element-type="text" element-class="form-control" label-class="sr-only" label-text="From" placeholder="{{modal.instanceData.email}}" is-disabled="true"></validate>
         <!--Subject-->
-        <validate form="messageForm" id="messageSubject" element-type="text" element-class="form-control" label-class="sr-only" label-text="Subject" placeholder="Subject"></validate>
+        <validate form="messageForm" id="messageSubject" element-type="text" element-class="form-control" label-class="sr-only" label-text="Subject" placeholder="Subject" value="formEntry.subject"></validate>
         <!--Compose-->
         <div class="form-group">
             <label for="messageCompose" class="sr-only">Message</label>

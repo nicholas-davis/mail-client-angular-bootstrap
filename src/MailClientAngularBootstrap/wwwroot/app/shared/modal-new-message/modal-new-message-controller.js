@@ -1,6 +1,15 @@
 ﻿//ModalNewMessageController
 mailModule.controller('modalNewMessageController', ['$scope', '$timeout', '$uibModalInstance', 'modalConfig', 'AlertService',
     function ($scope, $timeout, $uibModalInstance, modalConfig, AlertService) {
+        console.log('modalNewMessageController', modalConfig.instanceData)
+
+        ///Build form
+        $scope.formEntry = {
+            to: null,
+            from: modalConfig.instanceData.email,
+            subject: null,
+            message: null
+        };
 
         //Modal configuration
         $scope.modal = {
@@ -10,7 +19,11 @@ mailModule.controller('modalNewMessageController', ['$scope', '$timeout', '$uibM
             btnActionText: modalConfig.btnActionText,
             btnCancelText: modalConfig.btnCancelText,
             action: function () {
-                AlertService.alerts.add('success', 'hello', 2000)
+                AlertService.alerts.add('success', 'hello', 5000)
+
+                console.log($scope.formEntry)
+                //for (var i = 0; i < $scope.formEntry.length; i++) {
+                //}
             },
             cancel: function () {
                 $uibModalInstance.dismiss('cancel');
