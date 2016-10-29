@@ -1,7 +1,6 @@
 ﻿//ModalNewMessageController
-mailModule.controller('modalNewMessageController', ['$scope', '$timeout', '$uibModalInstance', 'modalConfig', 'AlertService',
-    function ($scope, $timeout, $uibModalInstance, modalConfig, AlertService) {
-        console.log('modalNewMessageController', modalConfig.instanceData)
+mailModule.controller('modalNewMessageController', ['$scope', '$timeout', '$uibModalInstance', 'modalConfig', 'AlertService', 'UtilitiesService',
+    function ($scope, $timeout, $uibModalInstance, modalConfig, AlertService, UtilitiesService) {
 
         ///Build form
         $scope.formEntry = {
@@ -19,11 +18,20 @@ mailModule.controller('modalNewMessageController', ['$scope', '$timeout', '$uibM
             btnActionText: modalConfig.btnActionText,
             btnCancelText: modalConfig.btnCancelText,
             action: function () {
-                AlertService.alerts.add('success', 'hello', 5000)
 
-                console.log($scope.formEntry)
-                //for (var i = 0; i < $scope.formEntry.length; i++) {
-                //}
+                //Check subject line
+                if ($scope.formEntry.subject) {
+                    //Show confirmed alert
+                    AlertService.alerts.add('success', 'Message was sent to ' + $scope.formEntry.to, 7000);
+
+                    //Close modal
+                    $uibModalInstance.close();
+
+                    //add service here 
+                } else {
+                    AlertService.alerts.add('info', 'Oops! You forgot to add a subject', 5000);
+                }
+
             },
             cancel: function () {
                 $uibModalInstance.dismiss('cancel');

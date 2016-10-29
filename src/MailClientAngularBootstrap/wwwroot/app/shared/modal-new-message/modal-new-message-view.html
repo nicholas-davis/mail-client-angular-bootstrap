@@ -9,18 +9,15 @@
     <loader text="modal.loadingText" ng-if="isLoading"></loader>
     <form name="messageForm" ng-if="!isLoading">
         <!--To-->
-        <validate form="messageForm" id="messageTo" element-type="text" element-class="form-control" label-class="sr-only" label-text="To" placeholder="To" value="formEntry.to" is-email="true" is-required="true"></validate>
+        <validate form="messageForm" id="messageTo" element-type="text" element-class="form-control" label-class="sr-only" placeholder="To" value="formEntry.to" is-email="true" is-required="true"></validate>
         <!--From-->
-        <validate form="messageForm" id="messageFrom" element-type="text" element-class="form-control" label-class="sr-only" label-text="From" placeholder="{{modal.instanceData.email}}" is-disabled="true"></validate>
+        <validate form="messageForm" id="messageFrom" element-type="text" element-class="form-control" label-class="sr-only" placeholder="{{modal.instanceData.email}}" is-disabled="true"></validate>
         <!--Subject-->
-        <validate form="messageForm" id="messageSubject" element-type="text" element-class="form-control" label-class="sr-only" label-text="Subject" placeholder="Subject" value="formEntry.subject"></validate>
+        <validate form="messageForm" id="messageSubject" element-type="text" element-class="form-control" label-class="sr-only" placeholder="Subject" value="formEntry.subject"></validate>
         <!--Compose-->
-        <div class="form-group">
-            <label for="messageCompose" class="sr-only">Message</label>
-            <textarea id="messageCompose" class="form-control" rows="6"></textarea>
-        </div>
+        <validate form="messageForm" id="messageCompose" element-type="textarea" element-class="form-control" label-class="sr-only" placeholder="Compose" value="formEntry.message"></validate>
     </form>
 </div>
 <div class="modal-footer" ng-if="!isLoading">
-    <button class="btn btn-primary" type="button" ng-click="modal.action()" ng-disabled="messageFrom">{{modal.btnActionText}}</button>
+    <button class="btn btn-primary" type="button" ng-click="modal.action()" ng-disabled="!formEntry.to">{{modal.btnActionText}}</button>
 </div>

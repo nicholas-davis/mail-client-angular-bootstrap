@@ -14,11 +14,10 @@ mailModule.directive('validate', [
                 elementType: "@",
                 elementClass: '@',
                 labelClass: '@',
-                labelText: '@',
                 placeholder: '@',
                 isRequired: '@',
                 isDisabled: '@',
-                isEmail: '@',
+                isEmail: '@'
             },
             link: function (scope, element, attrs, vmValidate) {
 
