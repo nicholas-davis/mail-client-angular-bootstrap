@@ -9792,6 +9792,10 @@ div[ui-view],
   height: 100%;
   min-height: 100%;
 }
+.contenteditable {
+  height: 200px;
+  overflow-x: auto;
+}
 /* mar, pad*/
 .mar-none {
   margin: 0 !important;

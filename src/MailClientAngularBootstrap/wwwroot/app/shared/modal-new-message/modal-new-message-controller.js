@@ -1,8 +1,8 @@
 ﻿//ModalNewMessageController
-mailModule.controller('modalNewMessageController', ['$scope', '$timeout', '$uibModalInstance', 'modalConfig', 'AlertService', 'UtilitiesService',
-    function ($scope, $timeout, $uibModalInstance, modalConfig, AlertService, UtilitiesService) {
+mailModule.controller('modalNewMessageController', ['$scope', '$timeout', '$uibModalInstance', 'modalConfig', 'AlertService',
+    function ($scope, $timeout, $uibModalInstance, modalConfig, AlertService) {
 
-        ///Build form
+        //Build form
         $scope.formEntry = {
             to: null,
             from: modalConfig.instanceData.email,

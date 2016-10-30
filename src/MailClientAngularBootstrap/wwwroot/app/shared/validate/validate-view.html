@@ -5,7 +5,11 @@
     <!--Form input-->
     <input type="{{vmValidate.elementType}}" name="{{vmValidate.placeholder}}" class="{{vmValidate.elementClass}}" id="{{vmValidate.id}}" placeholder="{{vmValidate.placeholder}}" value="{{vmValidate.value}}" ng-model="vmValidate.value" ng-pattern="isEmail" ng-disabled="isDisabled" ng-required="isRequired" ng-if="vmValidate.elementType === 'text'">
     <!--Form textarea-->
-    <textarea name="{{vmValidate.placeholder}}" class="{{vmValidate.elementClass}}" id="{{vmValidate.id}}" placeholder="{{vmValidate.placeholder}}" value="{{vmValidate.value}}" ng-model="vmValidate.value" ng-pattern="isEmail" ng-disabled="isDisabled" ng-required="isRequired" rows="6" ng-if="vmValidate.elementType === 'textarea'"></textarea>
+    <textarea name="{{vmValidate.placeholder}}" class="{{vmValidate.elementClass}}" id="{{vmValidate.id}}" placeholder="{{vmValidate.placeholder}}" value="{{vmValidate.value}}" ng-model="vmValidate.value" ng-disabled="isDisabled" ng-required="isRequired" rows="6" ng-if="vmValidate.elementType === 'textarea'"></textarea>
+    <!--Form content editable-->
+    <div name="{{vmValidate.placeholder}}" class="{{vmValidate.elementClass}} contenteditable" id="{{vmValidate.id}}" placeholder="{{vmValidate.placeholder}}" value="{{vmValidate.value}}" ng-model="vmValidate.value" contenteditable="true" ng-if="vmValidate.elementType === 'contenteditable'">
+        <div ng-bind-html="vmValidate.value"></div>
+    </div>
     <!--Display feedback messages-->
     <div ng-messages="vmValidate.form[vmValidate.placeholder].$error" ng-if="vmValidate.form[vmValidate.placeholder].$dirty" role="alert">
         <p class="help-block" ng-message="required">You did not enter a value</p>
