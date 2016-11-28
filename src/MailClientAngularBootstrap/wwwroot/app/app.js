@@ -21,8 +21,9 @@ mailClientApp.run(['$rootScope', '$state', '$stateParams', '$location', '$uibMod
         $rootScope.$stateParams = $stateParams;
 
         $rootScope.$on('$stateChangeSuccess', function (ev, to, toParams, from, fromParams) {
+
             //Page title
-            $rootScope.pageTitle = $stateParams.pageTitle;
+            $rootScope.pageTitle = $stateParams.pageTitle ? $stateParams.pageTitle : $location.path().replace(/^.*[\\\/]/, '').charAt(0).toUpperCase() + $location.path().slice(2);
 
             //Previous/Current state
             $rootScope.previousState = from.name;
@@ -31,7 +32,7 @@ mailClientApp.run(['$rootScope', '$state', '$stateParams', '$location', '$uibMod
             $rootScope.currentStateURL = to.url;
 
             //Set active class to main tabs
-            $rootScope.isPage = function (route) {
+            $rootScope.isPage = function (route) {      
                 return route === $location.path();
             }
 
