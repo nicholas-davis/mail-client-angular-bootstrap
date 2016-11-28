@@ -23,7 +23,8 @@ mailClientApp.run(['$rootScope', '$state', '$stateParams', '$location', '$uibMod
         $rootScope.$on('$stateChangeSuccess', function (ev, to, toParams, from, fromParams) {
 
             //Page title
-            $rootScope.pageTitle = $stateParams.pageTitle ? $stateParams.pageTitle : $location.path().replace(/^.*[\\\/]/, '').charAt(0).toUpperCase() + $location.path().slice(2);
+            var pageLocation = $location.path().replace(/^.*[\\\/]/, '');
+            $rootScope.pageTitle = $stateParams.pageTitle ? $stateParams.pageTitle : pageLocation.charAt(0).toUpperCase() + pageLocation.slice(1);
 
             //Previous/Current state
             $rootScope.previousState = from.name;
