@@ -42,12 +42,7 @@
                             <modal title="Reply Message" size="lg" template-url="app/shared/modal-reply-message/modal-reply-message-view.html" instance="modalReplyMessageController" instance-data="vmMessage" css-class="nav-pills-mail-actions-link" btn-icon="ion-reply icon-flipped" btn-action-text="Send" btn-cancel-text="Cancel"></modal>
                         </li>
                     </ul>
-
                     <hr class="mar-top-none" />
-                    {{vmMessage.messageID}} <br />
-                    {{vmMessage.type}}<br />
-                    {{vmMessage.guid}}<br />
-                    {{vmMessage.tags}}<br />
                     <div class="mail-content" ng-bind-html="vmMessage.message"></div>
                 </div>
             </div>

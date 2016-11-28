@@ -26,29 +26,10 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" aria-labelledby="single-button">
                     <li role="menuitem">
-                        <a href="javascript:;" filter filter-type="orderBy" filter-items="mail.messages" filter-value="'date'" filter-text="true">Date</a>
-                    </li>
-                    <li role="menuitem">
                         <a href="javascript:;" filter filter-type="filter" filter-items="mail.messages" filter-key="'type'" filter-value="'flagged'" filter-text="true">Flagged</a>
                     </li>
                     <li role="menuitem">
                         <a href="javascript:;" filter filter-type="filter" filter-items="mail.messages" filter-key="'type'" filter-value="'unread'" filter-text="true">Unread</a>
-                    </li>
-                    <li class="divider"></li>
-                    <!--<li role="menuitem" ng-click="$event.stopPropagation();">
-                        <a href="javascript:;" ng-model="reverse" ng-value="true">Ascending</a>
-                    </li>
-                    <li role="menuitem" ng-click="$event.stopPropagation();">
-                        <a href="javascript:;" ng-model="reverse" ng-value="false">Descending</a>
-                    </li>-->
-
-                    <li role="menuitem" ng-click="$event.stopPropagation();">
-                        Ascending
-                        <input type="radio" ng-model="predicate" ng-value="false">
-                    </li>
-                    <li role="menuitem" ng-click="$event.stopPropagation();">
-                        Descending
-                        <input type="radio" ng-model="predicate" ng-value="true">
                     </li>
                 </ul>
             </div>
