@@ -10346,6 +10346,9 @@ div[ui-view],
   position: absolute;
   font-size: 85%;
 }
+.mail-content .mail-message .mail-content {
+  padding: 15px !important;
+}
 /*modal*/
 .modal .modal-header .close {
   padding: 8px !important;

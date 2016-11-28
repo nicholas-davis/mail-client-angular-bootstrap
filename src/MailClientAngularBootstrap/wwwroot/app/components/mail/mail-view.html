@@ -16,10 +16,10 @@
         </form>
     </nav>
     <div class="list-group list-group-mail-sort clearfix">
-        <div class="list-group-item pull-left" ng-if="searchMessagesResults.length">
+        <div class="list-group-item pull-left">
             {{pageTitle}} ({{searchMessagesResults.length}})
         </div>
-        <div class="list-group-item pull-right">
+        <div class="list-group-item pull-right" ng-if="searchMessagesResults.length">
             <div class="btn-group btn-group-xs" uib-dropdown>
                 <button id="single-button" type="button" class="btn btn-link" uib-dropdown-toggle>
                     Sort by {{sortTest ? sortTest : 'Date'}} <span class="caret"></span>
@@ -44,11 +44,11 @@
 
                     <li role="menuitem" ng-click="$event.stopPropagation();">
                         Ascending
-                        <input type="radio" ng-model="reverse" ng-value="false">
+                        <input type="radio" ng-model="predicate" ng-value="false">
                     </li>
                     <li role="menuitem" ng-click="$event.stopPropagation();">
                         Descending
-                        <input type="radio" ng-model="reverse" ng-value="true">
+                        <input type="radio" ng-model="predicate" ng-value="true">
                     </li>
                 </ul>
             </div>
@@ -74,7 +74,7 @@
     </div>
     <div class="list-group list-group-mail-items">
         <loader text="modal.loadingText" ng-if="isLoading"></loader>
-        <a id="{{mail.id}}" href="#" ui-sref="Mail.Message({ messageID: mail.id, guid: mail.guid, type: mail.type, fromFirstName: mail.from.firstName, fromLastName: mail.from.lastName, fromEmail: mail.from.email, toFirstName: mail.to.firstName, toLastName: mail.to.lastName, toEmail: mail.to.email, subject: mail.subject, message: mail.message, date: mail.date, tags: mail.tags })" class="list-group-item" ng-class="{'active': selectedMessageItem === mail.id}" ng-click="selectMessageItem( mail.id )" ng-repeat="mail in mail.messages | orderBy: predicate:reverse | filter: searchMessages as searchMessagesResults track by $index" ng-if="!isLoading">
+        <a id="{{mail.id}}" href="javascript:;" ui-sref="Mail.Message({ messageID: mail.id, guid: mail.guid, type: mail.type, fromFirstName: mail.from.firstName, fromLastName: mail.from.lastName, fromEmail: mail.from.email, toFirstName: mail.to.firstName, toLastName: mail.to.lastName, toEmail: mail.to.email, subject: mail.subject, message: mail.message, date: mail.date, tags: mail.tags })" class="list-group-item" ng-class="{'active': selectedMessageItem === mail.id}" ng-click="selectMessageItem( mail.id )" ng-repeat="mail in mail.messages | orderBy: predicate:reverse | filter: searchMessages as searchMessagesResults track by $index" ng-if="!isLoading">
             <h5 class="list-group-item-heading">{{mail.subject}}</h5>
             <time class="list-group-item-date" datetime="{{mail.date | moment: 'MMMM Do YYYY, h:mm:ss a'}}}}">{{mail.date | moment:'MMMM Do YYYY, h:mm:ss a'}}</time>
             <ul class="list-group-item-actions list-unstyled list-inline">
@@ -82,9 +82,9 @@
                     <span class="icon icon-1-5x" ng-class="{'ion-ios-email' : (type | index: 'unread'), 'ion-ios-flag' : (type | index: 'flagged'), 'icon-flipped ion-reply' : (type | index: 'reply'), 'icon-flipped ion-reply-all' : (type | index: 'reply-all'), 'ion-arrow-right-a' : (type | index: 'forward')}"></span>
                 </li>
             </ul>
-            <p class="list-group-item-text">{{mail.message | ellipsis:'100'}}</p>
+            <p class="list-group-item-text" ng-bind-html="mail.message | ellipsis:'100'"></p>
         </a>
-        <div class="list-group-item border-none" ng-if="mail.messages[0] != null && searchMessagesResults.length === 0">
+        <div class="list-group-item border-none" ng-if="searchMessagesResults.length === 0">
             <p>Your search - <strong>{{searchMessages}}</strong> - did not match any of {{pageTitle | lowercase}} messages.</p>
         </div>
     </div>
@@ -127,7 +127,10 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="#" class="">something</a>
+                                        <a href="#" title="Settings">Settings</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Sign Out">Sign Out</a>
                                     </li>
                                 </ul>
                             </li>

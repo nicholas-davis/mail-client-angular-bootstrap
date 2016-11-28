@@ -4,8 +4,15 @@
         <div class="mail-header">
             <h2 class="mail-header-subject">{{vmMessage.subject}}</h2>
             <h6 class="mail-header-date"><time>{{vmMessage.date | moment:'MMMM Do YYYY, h:mm:ss a'}}</time></h6>
-            <h5 class="mail-header-from">From {{vmMessage.from.email}}</h5>
-            <h5 class="mail-header-to">To {{vmMessage.to.email}}</h5>
+            <h5 class="mail-header-from">
+                From: {{vmMessage.from.email}}
+            </h5>
+            <h5 class="mail-header-to">
+                To: {{vmMessage.to.email}}
+            </h5>
+            <h5 class="mail-header-tags" ng-if="vmMessage.tags">
+                Tags: <span class="label label-default mar-right-sm" ng-repeat="(key, value) in vmMessage.tags track by $index">{{value}}</span>
+            </h5>
         </div>
         <div class="row">
             <div class="col-lg-12">
@@ -41,7 +48,7 @@
                     {{vmMessage.type}}<br />
                     {{vmMessage.guid}}<br />
                     {{vmMessage.tags}}<br />
-                    <div ng-bind-html="vmMessage.message"></div>
+                    <div class="mail-content" ng-bind-html="vmMessage.message"></div>
                 </div>
             </div>
         </div>
