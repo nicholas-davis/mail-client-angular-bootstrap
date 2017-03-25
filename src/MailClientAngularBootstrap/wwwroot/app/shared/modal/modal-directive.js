@@ -2,7 +2,7 @@
 mailModule.directive('modal', ['$uibModal',
     function ($uibModal) {
         return {
-            restrict: 'E',
+            restrict: 'AE',
             scope: {},
             templateUrl: 'app/shared/modal/modal-view.html', //display btn
             controller: 'modalController', //Only for btn, not modal instance

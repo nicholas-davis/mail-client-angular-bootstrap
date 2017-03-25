@@ -10076,7 +10076,10 @@ div[ui-view],
   margin-bottom: 0 !important;
   border-radius: 0 !important;
 }
-.navbar .navbar-brand {
+.navbar .navbar-header {
+  float: left !important;
+}
+.navbar .navbar-header .navbar-brand {
   width: 50px;
   font-size: 24px;
   color: #4d4d4d;
@@ -10084,12 +10087,12 @@ div[ui-view],
   padding: 8px !important;
   text-align: center;
 }
-.navbar .navbar-brand,
-.navbar .navbar-brand:hover,
-.navbar .navbar-brand:focus {
+.navbar .navbar-header .navbar-brand,
+.navbar .navbar-header .navbar-brand:hover,
+.navbar .navbar-header .navbar-brand:focus {
   background: #cacaca;
 }
-.navbar .navbar-brand .navbar-brand-text {
+.navbar .navbar-header .navbar-brand .navbar-brand-text {
   font-size: 8px;
   width: 100%;
   top: 28px;
@@ -10214,7 +10217,7 @@ div[ui-view],
 .list-group-mail-items .list-group-item {
   color: inherit;
   background: none;
-  padding-left: 35px;
+  padding-left: 40px;
   border-left: none;
   border-right: none;
   border-radius: 0 !important;

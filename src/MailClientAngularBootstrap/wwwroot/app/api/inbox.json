@@ -4242,7 +4242,10 @@
     {
       "id": "57b8be1462f32d4c907b34b4",
       "guid": "81dcb680-77b4-4c9a-a111-e826c20e773e",
-      "type": [ "unread" ],
+      "type": [
+        "unread",
+        "folder"
+      ],
       "from": {
         "firstName": "Santiago",
         "lastName": "Roman",
@@ -4273,7 +4276,7 @@
     {
       "id": "57b8be148001522fd11244a1",
       "guid": "05ca06bf-fc1b-47e2-83cc-4c7a0dd79d40",
-      "type": [],
+      "type": [ "folder" ],
       "from": {
         "firstName": "Joseph",
         "lastName": "Osborne",
@@ -4287,6 +4290,9 @@
       "subject": "Est ex irure do aliqua dolor duis officia pariatur exercitation velit deserunt ut nulla.",
       "message": "<p>Consectetur labore laborum est eu deserunt id. Aute ea occaecat ad nisi aliqua fugiat. Enim fugiat id eu et. Velit et irure dolor mollit excepteur incididunt aliqua. Sint aliquip aliquip pariatur pariatur labore mollit proident occaecat. Cillum reprehenderit ipsum veniam cupidatat ipsum ut nisi minim Lorem cillum ullamco.</p><p>Quis ad aliqua proident esse aliquip. Eu et pariatur fugiat id enim Lorem et incididunt mollit aliquip aliquip. Do magna mollit id deserunt labore labore aute excepteur deserunt magna culpa. Excepteur non proident do enim ut incididunt esse est aute sit consequat Lorem mollit. Est amet ad esse enim do. Enim sunt elit cupidatat amet voluptate id.</p><p>Exercitation labore eu nulla quis velit commodo. Proident pariatur voluptate proident incididunt nostrud aliqua ullamco Lorem laboris consectetur irure magna quis velit. Reprehenderit proident ut id laborum fugiat magna Lorem. Ullamco elit cupidatat eiusmod irure ea enim cupidatat. Amet dolor nulla exercitation deserunt. Officia ex adipisicing quis reprehenderit ex elit ex ullamco. Dolor aute velit laborum irure aliqua est aliqua officia velit eu ex do nostrud eu.</p>",
       "date": "2015-11-15T08:05:08 +05:00",
+      "folder": [
+        "ut culpa ea"
+      ],
       "tags": [
         "laboris",
         "anim",

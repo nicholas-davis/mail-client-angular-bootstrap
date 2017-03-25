@@ -19,27 +19,27 @@
                 <div class="mail-message">
                     <ul class="nav nav-pills nav-pills-mail-actions">
                         <li>
-                            <a href="#">
-                                <span class="icon icon-2x ion-ios-folder-outline"></span>
+                            <a href="javascript:;" tooltip-placement="top" uib-tooltip="Folder">
+                                <span class="icon icon-2x {{(vmMessage.type | index: 'folder') ? 'ion-ios-folder' : 'ion-ios-folder-outline'}}"></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="javascript:;" tooltip-placement="top" uib-tooltip="Tag">
                                 <span class="icon icon-flipped icon-2x ion-ios-pricetag-outline"></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="javascript:;" tooltip-placement="top" uib-tooltip="Trash">
                                 <span class="icon icon-2x ion-ios-trash-outline"></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="javascript:;" tooltip-placement="top" uib-tooltip="Flag">
                                 <span class="icon icon-2x {{(vmMessage.type | index: 'flagged') ? 'ion-ios-flag' : 'ion-ios-flag-outline'}}"></span>
                             </a>
                         </li>
                         <li>
-                            <modal title="Reply Message" size="lg" template-url="app/shared/modal-reply-message/modal-reply-message-view.html" instance="modalReplyMessageController" instance-data="vmMessage" css-class="nav-pills-mail-actions-link" btn-icon="ion-reply icon-flipped" btn-action-text="Send" btn-cancel-text="Cancel"></modal>
+                            <modal title="Reply Message" size="lg" template-url="app/shared/modal-reply-message/modal-reply-message-view.html" instance="modalReplyMessageController" instance-data="vmMessage" css-class="nav-pills-mail-actions-link" btn-icon="ion-reply icon-flipped" btn-action-text="Send" btn-cancel-text="Cancel" tooltip-placement="top" uib-tooltip="Reply" style="display:flex"></modal>
                         </li>
                     </ul>
                     <hr class="mar-top-none" />

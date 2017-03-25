@@ -1112,24 +1112,28 @@ body {
     .mar-bottom-none;
     .border-radius-none;
 
-    .navbar-brand { //navbar aside brand
-        width: @navbar-height;
-        font-size: @font-size-h3;
-        color: #4d4d4d;
-        .relative;
-        .pad-md;
-        .text-center;
+    .navbar-header {
+        .pull-left;
 
-        &,
-        &:hover,
-        &:focus {
-            background: #cacaca;
-        }
+        .navbar-brand { //navbar aside brand
+            width: @navbar-height;
+            font-size: @font-size-h3;
+            color: #4d4d4d;
+            .relative;
+            .pad-md;
+            .text-center;
 
-        .navbar-brand-text {
-            font-size: 8px;
-            width: 100%;
-            .absolute(28px, 0, inherit, inherit);
+            &,
+            &:hover,
+            &:focus {
+                background: #cacaca;
+            }
+
+            .navbar-brand-text {
+                font-size: 8px;
+                width: 100%;
+                .absolute(28px, 0, inherit, inherit);
+            }
         }
     }
 
@@ -1283,7 +1287,7 @@ body {
     .list-group-item {
         color: inherit;
         background: none;
-        padding-left: 35px;
+        padding-left: 40px;
         border-left: none;
         border-right: none;
         .border-radius-none;

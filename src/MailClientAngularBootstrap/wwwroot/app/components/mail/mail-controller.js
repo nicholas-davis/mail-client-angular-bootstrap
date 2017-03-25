@@ -1,9 +1,9 @@
 ﻿//MailController
 var mailModule = angular.module('mailClientApp.mail', []);
 
-mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'UtilitiesService', 'UserService', 'MailService', 'AlertService', 'FilterService',
-    function ($scope, $stateParams, $state, UtilitiesService, UserService, MailService, AlertService, FilterService) {
-
+mailModule.controller('MailController', ['$scope', '$state', '$stateParams', 'UtilitiesService', 'UserService', 'MailService', 'AlertService', 'FilterService',
+    function ($scope, $state, $stateParams, UtilitiesService, UserService, MailService, AlertService, FilterService) {
+        
         //User's basic data
         UserService.getUser().then(function (response) {
             $scope.user = response.user[0];
@@ -52,6 +52,7 @@ mailModule.controller('MailController', ['$scope', '$stateParams', '$state', 'Ut
         //Toggle css class
         $scope.selectMessageItem = function (mail) {
             $scope.selectedMessageItem = mail;
+            console.log($scope.selectedMessageItem)
         };
 
     }
