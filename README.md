@@ -1,7 +1,7 @@
-# Mail Client (Pending)
+# Mail Client
 This application is for demonstration purposes only. 
 
-##Frameworks/Tools
+## Frameworks/Tools
 - Angular v1.5.8
 - Angular UI Router v0.3.1
 - Angular UI Bootstrap v1.3.3
@@ -12,5 +12,5 @@ This application is for demonstration purposes only.
 - Bower
 - Gulp
 
-##Design
+## Design
 - Product design was created in Adobe Photoshop CC: [Raw PSD](https://github.com/nicholas-davis/design/blob/master/mail_client_mockup.psd)
