@@ -16,4 +16,4 @@ This application is for demonstration purposes only.
 - Product design was created in Adobe Photoshop CC: [Raw PSD](https://github.com/nicholas-davis/design/blob/master/mail_client_mockup.psd)
 
 ## Demo
-- Check out the mail client live: [demo](http://sandbox.nicholasdavis.co/projects/mail-client-angular-bootstrap)
+- Check out the mail client live: [demo](http://sandbox.nicholasdavis.co/projects/mail-client-angular-bootstrap?target=_blank)
